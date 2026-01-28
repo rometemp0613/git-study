@@ -74,6 +74,49 @@ git commit --amend --no-edit          # 파일만 추가, 메시지 유지
 - **주의**: 이미 push한 커밋은 amend 금지 (충돌 발생)
 - amend하면 커밋 해시가 변경됨
 
+### 4. 브랜치 (Branch)
+
+#### 브랜치란?
+독립적인 작업 공간. 새 기능 개발 시 브랜치를 만들어 작업하고, 완료되면 main에 합침.
+```
+          feature
+            ↓
+            ● ─ ●
+           /
+● ─ ● ─ ●
+         ↑
+        main
+```
+
+#### git branch
+브랜치 관리
+```bash
+git branch              # 브랜치 목록
+git branch 이름          # 브랜치 생성만
+git branch -d 이름       # 브랜치 삭제 (merge된 것만)
+git branch -D 이름       # 브랜치 강제 삭제
+```
+
+#### git switch
+브랜치 이동 (권장)
+```bash
+git switch 이름          # 브랜치 이동
+git switch -c 이름       # 생성 + 이동 동시에
+```
+- `git checkout`은 구버전 방식, `git switch`가 더 명확함
+
+#### git merge
+브랜치 합치기
+```bash
+git merge 브랜치명       # 해당 브랜치를 현재 브랜치로 합침
+```
+- **Fast-forward**: main이 그냥 앞으로 이동만 하면 되는 경우
+
+#### 브랜치 삭제 관련
+- Feature 브랜치는 merge 후 삭제하는 게 일반적
+- `main`, `develop` 같은 장기 브랜치는 유지
+- 같은 기능 재작업 시 새 브랜치 생성 권장
+
 ---
 
 ## 전체 학습 로드맵
@@ -87,7 +130,7 @@ git commit --amend --no-edit          # 파일만 추가, 메시지 유지
 - [ ] .gitignore - 추적 제외 파일 설정
 
 ### 2단계: 브랜치
-- [ ] branch, switch/checkout, merge
+- [x] branch, switch/checkout, merge
 - [ ] rebase - 커밋 히스토리 정리
 - [ ] conflict 해결 - 충돌 상황 대처
 - [ ] cherry-pick - 특정 커밋만 가져오기
@@ -121,3 +164,5 @@ git commit --amend --no-edit          # 파일만 추가, 메시지 유지
 - `-m`은 message의 약자
 - 커밋 해시: 각 커밋의 고유 ID (예: 1ab182a...)
 - `--amend`는 수정이 아니라 교체 (해시가 바뀜)
+- 브랜치 이동 시 파일 내용도 해당 브랜치 상태로 변경됨
+- `switch` vs `checkout`: switch가 브랜치 전용이라 더 명확함
