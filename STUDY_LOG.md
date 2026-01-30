@@ -119,15 +119,65 @@ git merge 브랜치명       # 해당 브랜치를 현재 브랜치로 합침
 
 ---
 
+## Day 2 (2026-01-30)
+
+### 1. git diff
+변경사항 비교
+```bash
+git diff                  # Working Directory ↔ Staging Area
+git diff --staged         # Staging Area ↔ 최신 커밋
+git diff HEAD             # Working Directory ↔ 최신 커밋
+git diff 커밋1 커밋2       # 두 커밋 간 비교
+```
+- `+` 추가된 줄, `-` 삭제된 줄
+- `--stat`: 통계만, `--name-only`: 파일명만
+
+### 2. git reset
+되돌리기 (히스토리 변경)
+```bash
+git reset HEAD 파일       # unstage (staging → working)
+git reset --soft HEAD~1   # 커밋 취소, 변경사항 staged 유지
+git reset HEAD~1          # 커밋 취소, 변경사항 unstaged (기본)
+git reset --hard HEAD~1   # 모두 삭제 ⚠️
+```
+- `--soft`: HEAD만 이동
+- `--mixed`: HEAD + Staging 초기화 (기본)
+- `--hard`: HEAD + Staging + Working 모두 초기화
+- **주의**: push한 커밋은 reset 금지!
+
+### 3. git revert
+안전하게 되돌리기 (새 커밋 생성)
+```bash
+git revert HEAD           # 최신 커밋 취소
+git revert 커밋해시        # 특정 커밋 취소
+```
+- 원본 커밋은 히스토리에 남음
+- 취소하는 새 커밋이 추가됨
+- **push한 커밋을 되돌릴 때 사용**
+
+### 4. .gitignore
+추적 제외 설정
+```
+*.log           # 확장자
+node_modules/   # 폴더
+.env            # 특정 파일
+!important.log  # 예외
+._*             # 패턴
+```
+- 이미 추적 중인 파일: `git rm --cached 파일` 후 추가
+- `.gitignore`도 커밋해야 팀원과 공유됨
+
+---
+
 ## 전체 학습 로드맵
 
 ### 1단계: 기초
 - [x] 3가지 영역 개념 (Working Directory, Staging Area, Repository)
 - [x] init, add, commit, status, log
 - [x] commit --amend
-- [ ] diff - 변경사항 비교
-- [ ] reset, revert - 되돌리기
-- [ ] .gitignore - 추적 제외 파일 설정
+- [x] diff - 변경사항 비교
+- [x] reset, revert - 되돌리기
+- [x] .gitignore - 추적 제외 파일 설정
 
 ### 2단계: 브랜치
 - [x] branch, switch/checkout, merge
