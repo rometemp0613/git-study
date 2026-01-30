@@ -78,6 +78,35 @@ git공부/
 
 ---
 
+## GitHub 저장소
+
+**URL**: https://github.com/rometemp0613/git-study
+
+### 학습 후 반드시 실행할 것
+
+학습 내용을 추가하거나 수정한 후에는 아래 명령어를 실행해서 GitHub에 업로드해야 합니다.
+
+```bash
+cd "/Volumes/Extreme SSD/git공부"
+git add -A
+git commit -m "docs: 학습 내용 추가"
+git push
+```
+
+### 다른 컴퓨터에서 받아오기
+
+```bash
+git clone https://github.com/rometemp0613/git-study.git
+```
+
+### 최신 내용 동기화
+
+```bash
+git pull
+```
+
+---
+
 ## 메모
 - `-m`은 message의 약자
 - 커밋 해시: 각 커밋의 고유 ID (예: 1ab182a...)
