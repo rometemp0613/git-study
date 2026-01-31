@@ -18,6 +18,9 @@
 - [x] diff - 변경사항 비교
 - [x] reset, revert - 되돌리기
 - [x] .gitignore - 추적 제외 파일 설정
+- [ ] HEAD 개념 - 현재 위치를 가리키는 포인터
+- [ ] Detached HEAD - 브랜치 없이 커밋을 직접 가리킬 때
+- [ ] restore - 변경사항 취소 (reset/revert보다 간단)
 
 ### 2단계: 브랜치
 - [x] branch, switch/checkout, merge
@@ -27,15 +30,21 @@
 
 ### 3단계: 원격 저장소 & GitHub
 - [ ] remote, push, pull, fetch, clone
+- [ ] 원격 추적 브랜치 - origin/main의 정체
 - [ ] Pull Request - 협업의 핵심
+- [ ] 브랜치 보호 규칙 - main 직접 push 막기 등
 - [ ] Issue & Project - 작업 관리
 - [ ] Fork - 오픈소스 기여 방식
+- [ ] README & Markdown - 프로젝트 문서 작성
 
 ### 4단계: 고급 기능
 - [ ] stash - 작업 임시 저장
 - [ ] tag - 버전 표시
+- [ ] 시맨틱 버전 관리 - v1.0.0 규칙
+- [ ] reflog - 실수로 삭제한 커밋 복구
 - [ ] hooks - 커밋 전후 자동 실행 스크립트
 - [ ] submodule - 저장소 안의 저장소
+- [ ] Git Alias - 자주 쓰는 명령어 단축키
 
 ### 5단계: 협업 전략
 - [ ] Git Flow - 브랜치 전략
@@ -47,6 +56,11 @@
 - [ ] 자동 테스트 - PR마다 테스트 실행
 - [ ] 자동 배포 - main 머지 시 배포
 - [ ] 린트/포매팅 - 코드 품질 자동 검사
+
+### 7단계: Git 내부 구조 (심화)
+- [ ] Git 객체 - blob, tree, commit
+- [ ] 해시 함수 - SHA-1과 Git
+- [ ] .git 폴더 탐험 - refs, objects, HEAD 파일
 
 ---
 
@@ -67,14 +81,16 @@ git공부/
 ├── README.md              # 진도 체크리스트 (현재 파일)
 ├── logs/                  # 날짜별 학습 일지
 │   ├── 2026-01-28.md
-│   └── 2026-01-30.md
+│   ├── 2026-01-30.md
+│   └── 2026-01-31.md
 └── notes/                 # 단계별 학습 노트
     ├── 1-basics/
     ├── 2-branching/
     ├── 3-remote/
     ├── 4-advanced/
     ├── 5-collaboration/
-    └── 6-cicd/
+    ├── 6-cicd/
+    └── 7-internals/
 ```
 
 ---
