@@ -130,7 +130,7 @@
 ## 디렉토리 구조
 
 ```
-git공부/
+study/git/
 ├── README.md              # 진도 체크리스트 (현재 파일)
 ├── CLAUDE.md              # Claude 학습 지침서
 ├── logs/                  # 날짜별 학습 일지
@@ -156,7 +156,7 @@ git공부/
 ### 학습 후 반드시 실행할 것
 
 ```bash
-cd "/Volumes/Extreme SSD/git공부"
+cd "/Volumes/Extreme SSD/study/git"
 git add -A
 git commit -m "docs: 학습 내용 추가"
 git push
