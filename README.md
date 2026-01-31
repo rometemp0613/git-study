@@ -21,8 +21,8 @@
 
 ### 2단계: 브랜치
 - [x] branch, switch/checkout, merge
-- [ ] rebase - 커밋 히스토리 정리
-- [ ] conflict 해결 - 충돌 상황 대처
+- [x] rebase - 커밋 히스토리 정리
+- [x] conflict 해결 - 충돌 상황 대처
 - [ ] cherry-pick - 특정 커밋만 가져오기
 
 ### 3단계: 원격 저장소 & GitHub
@@ -56,6 +56,7 @@
 |------|------|----------|------|
 | 2026-01-28 | 1단계 기초 | 3가지 영역, init/add/commit/status/log, amend, 브랜치 기초 | 완료 |
 | 2026-01-30 | 1단계 기초 | diff, reset, revert, .gitignore | 1단계 완료 |
+| 2026-01-31 | 2단계 브랜치 | rebase, interactive rebase (squash, reword, drop), 충돌 해결 | - |
 
 ---
 
