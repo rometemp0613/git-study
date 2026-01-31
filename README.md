@@ -1,5 +1,6 @@
 # Git & GitHub 학습 기록
 
+**학습 방식**: Claude와 함께 실습 중심 학습
 **학습 시작일**: 2026-01-28
 
 **학습 목표**:
@@ -12,55 +13,99 @@
 ## 진도 체크리스트
 
 ### 1단계: 기초
-- [x] 3가지 영역 개념 (Working Directory, Staging Area, Repository)
-- [x] init, add, commit, status, log
-- [x] commit --amend
-- [x] diff - 변경사항 비교
-- [x] reset, revert - 되돌리기
-- [x] .gitignore - 추적 제외 파일 설정
-- [ ] HEAD 개념 - 현재 위치를 가리키는 포인터
-- [ ] Detached HEAD - 브랜치 없이 커밋을 직접 가리킬 때
-- [ ] restore - 변경사항 취소 (reset/revert보다 간단)
+
+- [x] **3가지 영역 개념**
+  - 핵심: Working Directory, Staging Area, Repository
+- [x] **init, add, commit, status, log**
+  - 핵심: 저장소 생성, 스테이징, 커밋, 상태 확인, 히스토리
+- [x] **commit --amend**
+  - 핵심: 직전 커밋 수정 (메시지, 파일 추가)
+- [x] **diff - 변경사항 비교**
+  - 핵심: diff, diff --staged, diff HEAD
+- [x] **reset, revert - 되돌리기**
+  - 핵심: reset --soft/--mixed/--hard, revert (커밋 취소)
+- [x] **.gitignore - 추적 제외 파일 설정**
+  - 핵심: 패턴 문법, 전역 gitignore
+- [ ] **HEAD 개념**
+  - 핵심: 현재 위치 포인터, HEAD~1, HEAD^
+- [ ] **Detached HEAD**
+  - 핵심: 브랜치 없이 커밋 직접 체크아웃, 임시 작업
+- [ ] **restore - 변경사항 취소**
+  - 핵심: restore, restore --staged (reset/revert보다 간단)
 
 ### 2단계: 브랜치
-- [x] branch, switch/checkout, merge
-- [x] rebase - 커밋 히스토리 정리
-- [x] conflict 해결 - 충돌 상황 대처
-- [ ] cherry-pick - 특정 커밋만 가져오기
+
+- [x] **branch, switch/checkout, merge**
+  - 핵심: 브랜치 생성/전환/병합, fast-forward vs 3-way merge
+- [x] **rebase - 커밋 히스토리 정리**
+  - 핵심: rebase, interactive rebase (squash, reword, drop)
+- [x] **conflict 해결 - 충돌 상황 대처**
+  - 핵심: 충돌 마커, 수동 해결, merge --abort
+- [ ] **cherry-pick - 특정 커밋만 가져오기**
+  - 핵심: cherry-pick <commit>, 다른 브랜치에서 커밋 복사
 
 ### 3단계: 원격 저장소 & GitHub
-- [ ] remote, push, pull, fetch, clone
-- [ ] 원격 추적 브랜치 - origin/main의 정체
-- [ ] Pull Request - 협업의 핵심
-- [ ] 브랜치 보호 규칙 - main 직접 push 막기 등
-- [ ] Issue & Project - 작업 관리
-- [ ] Fork - 오픈소스 기여 방식
-- [ ] README & Markdown - 프로젝트 문서 작성
+
+- [ ] **remote, push, pull, fetch, clone**
+  - 핵심: 원격 저장소 연결, 업로드/다운로드, fetch vs pull
+- [ ] **원격 추적 브랜치**
+  - 핵심: origin/main의 정체, upstream 설정
+- [ ] **Pull Request**
+  - 핵심: PR 생성, 리뷰, 머지, 협업 워크플로우
+- [ ] **브랜치 보호 규칙**
+  - 핵심: main 직접 push 막기, 리뷰 필수 설정
+- [ ] **Issue & Project**
+  - 핵심: 이슈 생성, 라벨, 마일스톤, 프로젝트 보드
+- [ ] **Fork**
+  - 핵심: 오픈소스 기여 방식, upstream 동기화
+- [ ] **README & Markdown**
+  - 핵심: 프로젝트 문서 작성, 마크다운 문법
 
 ### 4단계: 고급 기능
-- [ ] stash - 작업 임시 저장
-- [ ] tag - 버전 표시
-- [ ] 시맨틱 버전 관리 - v1.0.0 규칙
-- [ ] reflog - 실수로 삭제한 커밋 복구
-- [ ] hooks - 커밋 전후 자동 실행 스크립트
-- [ ] submodule - 저장소 안의 저장소
-- [ ] Git Alias - 자주 쓰는 명령어 단축키
+
+- [ ] **stash - 작업 임시 저장**
+  - 핵심: stash, stash pop, stash list, stash apply
+- [ ] **tag - 버전 표시**
+  - 핵심: tag, annotated tag, tag push
+- [ ] **시맨틱 버전 관리**
+  - 핵심: v1.0.0 규칙 (MAJOR.MINOR.PATCH)
+- [ ] **reflog - 실수로 삭제한 커밋 복구**
+  - 핵심: reflog, 삭제된 브랜치/커밋 복구
+- [ ] **hooks - 커밋 전후 자동 실행 스크립트**
+  - 핵심: pre-commit, post-commit, .git/hooks/
+- [ ] **submodule - 저장소 안의 저장소**
+  - 핵심: submodule add, update, 의존성 관리
+- [ ] **Git Alias - 자주 쓰는 명령어 단축키**
+  - 핵심: git config --global alias.co checkout
 
 ### 5단계: 협업 전략
-- [ ] Git Flow - 브랜치 전략
-- [ ] GitHub Flow - 간소화된 전략
-- [ ] Conventional Commits - 커밋 메시지 규칙
+
+- [ ] **Git Flow**
+  - 핵심: main, develop, feature, release, hotfix 브랜치
+- [ ] **GitHub Flow**
+  - 핵심: 간소화된 전략, main + feature 브랜치
+- [ ] **Conventional Commits**
+  - 핵심: feat, fix, docs, style, refactor, test, chore
 
 ### 6단계: CI/CD 자동화
-- [ ] GitHub Actions 기초 - 워크플로우 작성
-- [ ] 자동 테스트 - PR마다 테스트 실행
-- [ ] 자동 배포 - main 머지 시 배포
-- [ ] 린트/포매팅 - 코드 품질 자동 검사
+
+- [ ] **GitHub Actions 기초**
+  - 핵심: 워크플로우 YAML, on/jobs/steps
+- [ ] **자동 테스트**
+  - 핵심: PR마다 테스트 실행, status check
+- [ ] **자동 배포**
+  - 핵심: main 머지 시 배포, secrets 관리
+- [ ] **린트/포매팅**
+  - 핵심: 코드 품질 자동 검사, prettier, eslint
 
 ### 7단계: Git 내부 구조 (심화)
-- [ ] Git 객체 - blob, tree, commit
-- [ ] 해시 함수 - SHA-1과 Git
-- [ ] .git 폴더 탐험 - refs, objects, HEAD 파일
+
+- [ ] **Git 객체**
+  - 핵심: blob, tree, commit 객체의 관계
+- [ ] **해시 함수**
+  - 핵심: SHA-1, 커밋 ID의 원리
+- [ ] **.git 폴더 탐험**
+  - 핵심: refs, objects, HEAD 파일 구조
 
 ---
 
@@ -69,8 +114,16 @@
 | 날짜 | 주제 | 주요 내용 | 비고 |
 |------|------|----------|------|
 | 2026-01-28 | 1단계 기초 | 3가지 영역, init/add/commit/status/log, amend, 브랜치 기초 | 완료 |
-| 2026-01-30 | 1단계 기초 | diff, reset, revert, .gitignore | 1단계 완료 |
-| 2026-01-31 | 2단계 브랜치 | rebase, interactive rebase (squash, reword, drop), 충돌 해결 | - |
+| 2026-01-30 | 1단계 기초 | diff, reset, revert, .gitignore | 완료 |
+| 2026-01-31 | 2단계 브랜치 | rebase, interactive rebase (squash, reword, drop), 충돌 해결 | 완료 |
+
+---
+
+## 진행 현황
+
+- **총 항목**: 34개
+- **완료**: 9개
+- **진행률**: 26%
 
 ---
 
@@ -79,6 +132,7 @@
 ```
 git공부/
 ├── README.md              # 진도 체크리스트 (현재 파일)
+├── CLAUDE.md              # Claude 학습 지침서
 ├── logs/                  # 날짜별 학습 일지
 │   ├── 2026-01-28.md
 │   ├── 2026-01-30.md
@@ -101,8 +155,6 @@ git공부/
 
 ### 학습 후 반드시 실행할 것
 
-학습 내용을 추가하거나 수정한 후에는 아래 명령어를 실행해서 GitHub에 업로드해야 합니다.
-
 ```bash
 cd "/Volumes/Extreme SSD/git공부"
 git add -A
@@ -121,4 +173,3 @@ git clone https://github.com/rometemp0613/git-study.git
 ```bash
 git pull
 ```
-
