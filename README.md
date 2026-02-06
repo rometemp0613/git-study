@@ -26,7 +26,7 @@
   - 핵심: reset --soft/--mixed/--hard, revert (커밋 취소)
 - [x] **.gitignore - 추적 제외 파일 설정**
   - 핵심: 패턴 문법, 전역 gitignore
-- [ ] **HEAD 개념**
+- [x] **HEAD 개념**
   - 핵심: 현재 위치 포인터, HEAD~1, HEAD^
 - [ ] **Detached HEAD**
   - 핵심: 브랜치 없이 커밋 직접 체크아웃, 임시 작업
@@ -116,14 +116,15 @@
 | 2026-01-28 | 1단계 기초 | 3가지 영역, init/add/commit/status/log, amend, 브랜치 기초 | 완료 |
 | 2026-01-30 | 1단계 기초 | diff, reset, revert, .gitignore | 완료 |
 | 2026-01-31 | 2단계 브랜치 | rebase, interactive rebase (squash, reword, drop), 충돌 해결 | 완료 |
+| 2026-02-07 | 1단계 기초 | HEAD 개념, HEAD~n, HEAD^, .git/HEAD 파일 | 완료 |
 
 ---
 
 ## 진행 현황
 
 - **총 항목**: 34개
-- **완료**: 9개
-- **진행률**: 26%
+- **완료**: 10개
+- **진행률**: 29%
 
 ---
 
