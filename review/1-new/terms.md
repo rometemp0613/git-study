@@ -15,6 +15,6 @@
 
 ## 복습 2라운드에서 틀린 것
 
-- **reset 기본값은 --mixed (반복 오답!)**: 변경 내용이 삭제되는 건 --hard뿐. 기본(--mixed)은 Working Directory에 unstaged로 남아있음. 외우기: soft=살살(커밋만), mixed=중간(커밋+스테이징), hard=전부 날림.
+- **reset 기본값은 --mixed (반복 오답!)**: 변경 내용이 삭제되는 건 --hard뿐. 기본(--mixed)은 Working Directory에 unstaged로 남아있음. 외우기: soft=살살(커밋만), mixed=중간(커밋+스테이징), hard=전부 날림. 핵심: reset은 커밋 포인터만 뒤로 가고 파일은 원래대로 남아있는 게 기본. --hard만 파일까지 바꿈.
 - **reword**: interactive rebase에서 커밋 메시지만 수정할 때 사용. squash=합치기, edit=내용 수정, reword=메시지만 수정.
 - **git status -s 읽는 법**: 왼쪽 칸=Staging 상태, 오른쪽 칸=Working Directory 상태. `M ` = staged, ` M` = unstaged, `??` = untracked.
