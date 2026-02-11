@@ -30,7 +30,7 @@
   - 핵심: 현재 위치 포인터, HEAD~1, HEAD^
 - [x] **Detached HEAD**
   - 핵심: 브랜치 없이 커밋 직접 체크아웃, 임시 작업
-- [ ] **restore - 변경사항 취소**
+- [x] **restore - 변경사항 취소**
   - 핵심: restore, restore --staged (reset/revert보다 간단)
 
 ### 2단계: 브랜치
@@ -118,14 +118,15 @@
 | 2026-01-31 | 2단계 브랜치 | rebase, interactive rebase (squash, reword, drop), 충돌 해결 | 완료 |
 | 2026-02-07 | 1단계 기초 | HEAD 개념, HEAD~n, HEAD^, .git/HEAD 파일 | 완료 |
 | 2026-02-07 | 1단계 기초 | Detached HEAD, checkout vs switch/restore 정리 | 완료 |
+| 2026-02-12 | 1단계 기초 | restore, restore --staged, --source, restore vs reset vs revert | 1단계 완료! |
 
 ---
 
 ## 진행 현황
 
 - **총 항목**: 34개
-- **완료**: 11개
-- **진행률**: 32%
+- **완료**: 12개
+- **진행률**: 35%
 
 ---
 
