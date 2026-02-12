@@ -10,8 +10,14 @@
 ## 복습에서 틀린 것
 
 - **reset --mixed**: reset의 기본값. HEAD + Staging을 되돌리고 Working Directory는 유지. --soft(HEAD만), --mixed(HEAD+Staging), --hard(전부).
-- **HEAD~n vs HEAD^n**: ~n은 "몇 세대 위"(HEAD~2 = 2세대 위), ^n은 "몇 번째 부모"(HEAD^2 = 두 번째 부모, 머지 커밋에서만 의미). 일반 커밋에서는 HEAD~1 = HEAD^.
 - **git diff가 비어있는 이유**: git add 후에는 Working Directory와 Staging이 같아져서 git diff가 비어있음. 이때는 git diff --staged로 Staging ↔ Repository 비교해야 변경사항이 보임.
+
+## cherry-pick
+
+- **git cherry-pick <해시>**: 다른 브랜치의 특정 커밋을 현재 브랜치에 복사. 해시가 달라짐(부모 커밋이 다르니까).
+- **git cherry-pick --no-commit (-n)**: 커밋하지 않고 스테이징에만 올림. 여러 커밋을 하나로 합칠 때 유용.
+- **git cherry-pick --continue**: 충돌 해결 후 계속 진행. 해시를 붙이면 안 됨!
+- **git cherry-pick --abort**: cherry-pick 취소하고 원래 상태로 돌아감.
 
 ## 복습 2라운드에서 틀린 것
 

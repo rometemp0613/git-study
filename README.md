@@ -41,7 +41,7 @@
   - 핵심: rebase, interactive rebase (squash, reword, drop)
 - [x] **conflict 해결 - 충돌 상황 대처**
   - 핵심: 충돌 마커, 수동 해결, merge --abort
-- [ ] **cherry-pick - 특정 커밋만 가져오기**
+- [x] **cherry-pick - 특정 커밋만 가져오기**
   - 핵심: cherry-pick <commit>, 다른 브랜치에서 커밋 복사
 
 ### 3단계: 원격 저장소 & GitHub
@@ -119,14 +119,15 @@
 | 2026-02-07 | 1단계 기초 | HEAD 개념, HEAD~n, HEAD^, .git/HEAD 파일 | 완료 |
 | 2026-02-07 | 1단계 기초 | Detached HEAD, checkout vs switch/restore 정리 | 완료 |
 | 2026-02-12 | 1단계 기초 | restore, restore --staged, --source, restore vs reset vs revert | 1단계 완료! |
+| 2026-02-13 | 2단계 브랜치 | cherry-pick, --no-commit, --continue/--abort, 충돌 해결 | 2단계 완료! |
 
 ---
 
 ## 진행 현황
 
 - **총 항목**: 34개
-- **완료**: 12개
-- **진행률**: 35%
+- **완료**: 13개
+- **진행률**: 38%
 
 ---
 
