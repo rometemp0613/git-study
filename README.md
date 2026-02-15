@@ -46,9 +46,9 @@
 
 ### 3단계: 원격 저장소 & GitHub
 
-- [ ] **remote, push, pull, fetch, clone**
+- [x] **remote, push, pull, fetch, clone**
   - 핵심: 원격 저장소 연결, 업로드/다운로드, fetch vs pull
-- [ ] **원격 추적 브랜치**
+- [x] **원격 추적 브랜치**
   - 핵심: origin/main의 정체, upstream 설정
 - [ ] **Pull Request**
   - 핵심: PR 생성, 리뷰, 머지, 협업 워크플로우
@@ -120,14 +120,15 @@
 | 2026-02-07 | 1단계 기초 | Detached HEAD, checkout vs switch/restore 정리 | 완료 |
 | 2026-02-12 | 1단계 기초 | restore, restore --staged, --source, restore vs reset vs revert | 1단계 완료! |
 | 2026-02-13 | 2단계 브랜치 | cherry-pick, --no-commit, --continue/--abort, 충돌 해결 | 2단계 완료! |
+| 2026-02-16 | 3단계 원격 | remote, push, pull, fetch, clone, 원격 추적 브랜치 | |
 
 ---
 
 ## 진행 현황
 
 - **총 항목**: 34개
-- **완료**: 13개
-- **진행률**: 38%
+- **완료**: 15개
+- **진행률**: 44%
 
 ---
 
