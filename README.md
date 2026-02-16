@@ -60,7 +60,7 @@
   - 핵심: 원격 저장소 연결, 업로드/다운로드, fetch vs pull
 - [x] **원격 추적 브랜치**
   - 핵심: origin/main의 정체, upstream 설정
-- [ ] **Pull Request**
+- [x] **Pull Request**
   - 핵심: PR 생성, 리뷰, 머지, 협업 워크플로우
 - [ ] **브랜치 보호 규칙**
   - 핵심: main 직접 push 막기, 리뷰 필수 설정
@@ -131,14 +131,15 @@
 | 2026-02-12 | 1단계 기초 | restore, restore --staged, --source, restore vs reset vs revert | 1단계 완료! |
 | 2026-02-13 | 2단계 브랜치 | cherry-pick, --no-commit, --continue/--abort, 충돌 해결 | 2단계 완료! |
 | 2026-02-16 | 3단계 원격 | remote, push, pull, fetch, clone, 원격 추적 브랜치 | |
+| 2026-02-17 | 3단계 원격 | Pull Request 생성, 리뷰, 머지 (merge/squash/rebase) | |
 
 ---
 
 ## 진행 현황
 
 - **총 항목**: 34개
-- **완료**: 15개
-- **진행률**: 44%
+- **완료**: 16개
+- **진행률**: 47%
 
 ---
 

@@ -21,3 +21,13 @@
 
 - **fetch는 스테이징이 아니라 원격 추적 브랜치를 업데이트**: fetch는 워킹 디렉토리나 스테이징에 아무 영향 없음. origin/main만 최신으로 갱신.
 - **push도 origin/main을 업데이트함**: push 성공 후 로컬의 origin/main도 push한 커밋 위치로 이동.
+
+## Pull Request
+
+- **Pull Request (PR)**: feature 브랜치의 변경사항을 main에 합치기 전에 리뷰/검토하는 과정. 브랜치 → 작업 → push → PR 생성 → 리뷰 → 머지 → 브랜치 삭제.
+- **gh pr create --title "제목" --body "설명"**: CLI에서 PR 생성.
+- **gh pr view <번호>**: PR 정보 조회.
+- **gh pr merge <번호>**: PR 머지. 3가지 방법 선택 가능.
+- **Merge commit**: 모든 커밋 보존 + 머지 커밋 생성. 히스토리를 그대로 남기고 싶을 때.
+- **Squash and merge**: 모든 커밋을 1개로 합쳐서 머지. 잡다한 커밋을 깔끔하게 정리할 때.
+- **Rebase and merge**: 머지 커밋 없이 커밋들을 일직선으로 붙임. 커밋 수는 그대로 유지됨.
