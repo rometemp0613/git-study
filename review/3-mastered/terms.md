@@ -10,8 +10,13 @@
 
 ## cherry-pick
 
+- **git cherry-pick <해시>**: 다른 브랜치의 특정 커밋을 현재 브랜치에 복사. 해시가 달라짐(부모 커밋이 다르니까).
 - **git cherry-pick --continue**: 충돌 해결 후 계속 진행. 해시를 붙이면 안 됨!
 
 ## reset
 
 - **reset --mixed**: reset의 기본값. HEAD + Staging을 되돌리고 Working Directory는 유지.
+
+## interactive rebase 키워드
+
+- **squash**: 이전 커밋과 합치기. **reword**: 커밋 메시지만 수정. **edit**: 커밋 내용(파일) 수정.
