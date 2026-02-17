@@ -170,13 +170,19 @@ study/git/
 
 **URL**: https://github.com/rometemp0613/git-study
 
-### 학습 후 반드시 실행할 것
+### 학습 후 반드시 실행할 것 (PR 필수!)
+
+> ⚠️ main 브랜치에 보호 규칙이 적용되어 있어 직접 push 불가
 
 ```bash
-cd "/Volumes/Extreme SSD/study/git"
+git switch -c docs/학습주제
 git add -A
 git commit -m "docs: 학습 내용 추가"
-git push
+git push -u origin docs/학습주제
+gh pr create --title "docs: 학습 내용 추가" --body "설명"
+gh pr merge --squash
+git switch main
+git pull
 ```
 
 ### 다른 컴퓨터에서 받아오기
