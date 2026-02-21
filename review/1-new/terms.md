@@ -23,3 +23,14 @@
 - **gh issue list**: 열린 이슈 목록. `--state all`로 닫힌 것도 포함.
 - **gh issue close <번호>**: 이슈 닫기. `--reason completed` 또는 `--reason "not planned"`.
 - **gh issue edit <번호>**: `--add-assignee`, `--add-label` 등으로 이슈 수정.
+
+## Fork
+
+- **Fork**: GitHub → GitHub 서버 간 레포 복사. 내 계정에 원본의 사본을 만듦. 오픈소스 기여 시 사용.
+- **Fork vs Clone**: Fork는 서버 간 복사(GitHub→GitHub), Clone은 서버→로컬 복사(GitHub→내 PC).
+- **origin**: Fork 후 내 계정의 레포를 가리키는 remote. push 가능.
+- **upstream**: 원본 레포를 가리키는 remote. 읽기 전용.
+- **git remote add upstream <URL>**: 원본 레포를 upstream으로 수동 등록.
+- **gh repo fork <레포> --clone=true**: Fork + Clone + upstream 설정을 한 번에.
+- **upstream 동기화**: `git fetch upstream` → `git merge upstream/main` → `git push origin main`. 안 하면 PR 충돌 가능.
+- **오픈소스 기여 흐름**: Fork → Clone → 브랜치 → 작업 → push(origin) → 원본에 PR.
