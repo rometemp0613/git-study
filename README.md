@@ -151,7 +151,7 @@
 ```
 study/git/
 ├── README.md              # 진도 체크리스트 (현재 파일)
-├── CLAUDE.md              # Claude 학습 지침서
+├── AGENTS.md              # Claude 학습 지침서
 ├── logs/                  # 날짜별 학습 일지
 │   ├── 2026-01-28.md
 │   ├── 2026-01-30.md
