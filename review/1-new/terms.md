@@ -24,6 +24,13 @@
 - **gh issue close <번호>**: 이슈 닫기. `--reason completed` 또는 `--reason "not planned"`.
 - **gh issue edit <번호>**: `--add-assignee`, `--add-label` 등으로 이슈 수정.
 
+## README & Markdown
+
+- **마크다운 이미지 vs 링크**: `[텍스트](URL)` = 링크, `![대체텍스트](URL)` = 이미지. `!` 유무 차이.
+- **뱃지**: shields.io 같은 서비스가 상태를 실시간 이미지 URL로 제공. GitHub Actions 연결 시 빌드 결과 자동 반영.
+- **GitHub 전용 문법**: `@username` 멘션, `#123` 이슈/PR 자동 링크, `- [ ]` / `- [x]` 체크박스.
+- **잘 만든 README 구성**: 프로젝트 설명 → 설치 → 사용법 → 기여 → 라이센스.
+
 ## Fork
 
 - **Fork**: GitHub → GitHub 서버 간 레포 복사. 내 계정에 원본의 사본을 만듦. 오픈소스 기여 시 사용.
