@@ -22,12 +22,10 @@
 ## fetch
 
 - **git fetch**: 원격 변경사항을 원격 추적 브랜치(origin/main)에만 다운로드. 로컬 브랜치는 안 바뀜.
-- **fetch vs pull**: fetch는 안전하게 확인만, pull은 바로 병합까지. fetch 후 diff로 확인하고 merge하는 게 안전.
 - **fetch는 스테이징이 아니라 원격 추적 브랜치를 업데이트**: fetch는 워킹 디렉토리나 스테이징에 아무 영향 없음. origin/main만 최신으로 갱신.
 
 ## 원격 추적 브랜치
 
-- **origin/main**: 마지막으로 확인한 원격 저장소의 상태를 기억하는 읽기 전용 포인터. fetch, push, pull 시 업데이트됨. (merge만으로는 업데이트 안 됨!)
 - **git branch -r**: 원격 추적 브랜치만 보기.
 - **git branch -a**: 로컬 + 원격 추적 브랜치 모두 보기.
 - **git branch -vv**: 로컬 브랜치의 upstream 연결 상태와 ahead/behind 확인.
