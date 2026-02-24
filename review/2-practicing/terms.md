@@ -19,11 +19,6 @@
 
 - **git status -s 읽는 법**: 왼쪽 칸=Staging 상태, 오른쪽 칸=Working Directory 상태. `M ` = staged, ` M` = unstaged, `??` = untracked.
 
-## fetch
-
-- **git fetch**: 원격 변경사항을 원격 추적 브랜치(origin/main)에만 다운로드. 로컬 브랜치는 안 바뀜.
-- **fetch는 스테이징이 아니라 원격 추적 브랜치를 업데이트**: fetch는 워킹 디렉토리나 스테이징에 아무 영향 없음. origin/main만 최신으로 갱신.
-
 ## 원격 추적 브랜치
 
 - **git branch -r**: 원격 추적 브랜치만 보기.
@@ -31,12 +26,6 @@
 - **git branch -vv**: 로컬 브랜치의 upstream 연결 상태와 ahead/behind 확인.
 - **upstream (-u)**: `git push -u origin main`으로 설정. 이후 `git push`만으로 push 가능.
 - **push도 origin/main을 업데이트함**: push 성공 후 로컬의 origin/main도 push한 커밋 위치로 이동.
-
-## PR 머지 방식
-
-- **Merge commit** ← 이름 주의!: 모든 커밋 보존 + 머지 커밋 1개 생성. (5커밋 PR → 6개)
-- **Squash and merge**: 모든 커밋을 1개로 합쳐서 머지. (5커밋 PR → 1개)
-- **Rebase and merge**: 머지 커밋 없이 일직선으로 붙임. (5커밋 PR → 5개)
 
 ## PR CLI
 
