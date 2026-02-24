@@ -41,3 +41,14 @@
 - **gh repo fork <레포> --clone=true**: Fork + Clone + upstream 설정을 한 번에.
 - **upstream 동기화**: `git fetch upstream` → `git merge upstream/main` → `git push origin main`. 안 하면 PR 충돌 가능.
 - **오픈소스 기여 흐름**: Fork → Clone → 브랜치 → 작업 → push(origin) → 원본에 PR.
+
+## stash
+
+- **git stash**: 작업 중인 변경사항을 임시 저장. 워킹 디렉토리가 깨끗해져서 브랜치 전환 가능.
+- **git stash pop**: 가장 최근 stash를 꺼내고 목록에서 삭제. pop = apply + drop.
+- **git stash apply**: stash를 꺼내되 목록에 유지. 여러 브랜치에 같은 stash 적용할 때 사용.
+- **git stash -u**: untracked(새로 만든) 파일도 포함해서 stash. 기본 stash는 tracked만 저장.
+- **git stash -m "메시지"**: 설명을 달아서 저장. 여러 개 쌓일 때 구분용.
+- **git stash list**: 저장된 stash 목록 보기. stash@{0}이 가장 최근.
+- **git stash drop stash@{n}**: 특정 stash 삭제.
+- **git stash clear**: 모든 stash 삭제.

@@ -73,7 +73,7 @@
 
 ### 4단계: 고급 기능
 
-- [ ] **stash - 작업 임시 저장**
+- [x] **stash - 작업 임시 저장**
   - 핵심: stash, stash pop, stash list, stash apply
 - [ ] **tag - 버전 표시**
   - 핵심: tag, annotated tag, tag push
@@ -136,14 +136,15 @@
 | 2026-02-22 | 3단계 원격 | Issue & Project, 라벨, 마일스톤, closes 키워드 | |
 | 2026-02-22 | 3단계 원격 | Fork, upstream 동기화, 오픈소스 기여 흐름 | |
 | 2026-02-23 | 3단계 원격 | README & Markdown 문법, 뱃지, 잘 만든 README 구성 | |
+| 2026-02-24 | 4단계 고급 | stash 임시 저장, pop/apply, -u, stash 관리 | |
 
 ---
 
 ## 진행 현황
 
 - **총 항목**: 34개
-- **완료**: 19개
-- **진행률**: 56%
+- **완료**: 20개
+- **진행률**: 59%
 
 ---
 

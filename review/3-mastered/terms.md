@@ -28,3 +28,14 @@
 ## interactive rebase 키워드
 
 - **squash**: 이전 커밋과 합치기. **reword**: 커밋 메시지만 수정. **edit**: 커밋 내용(파일) 수정.
+
+## PR 머지 방식
+
+- **Merge commit** ← 이름 주의!: 모든 커밋 보존 + 머지 커밋 1개 생성. (5커밋 PR → 6개)
+- **Squash and merge**: 모든 커밋을 1개로 합쳐서 머지. (5커밋 PR → 1개)
+- **Rebase and merge**: 머지 커밋 없이 일직선으로 붙임. (5커밋 PR → 5개)
+
+## fetch
+
+- **git fetch**: 원격 변경사항을 원격 추적 브랜치(origin/main)에만 다운로드. 로컬 브랜치는 안 바뀜.
+- **fetch는 스테이징이 아니라 원격 추적 브랜치를 업데이트**: fetch는 워킹 디렉토리나 스테이징에 아무 영향 없음. origin/main만 최신으로 갱신.
