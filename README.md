@@ -75,9 +75,9 @@
 
 - [x] **stash - 작업 임시 저장**
   - 핵심: stash, stash pop, stash list, stash apply
-- [ ] **tag - 버전 표시**
+- [x] **tag - 버전 표시**
   - 핵심: tag, annotated tag, tag push
-- [ ] **시맨틱 버전 관리**
+- [x] **시맨틱 버전 관리**
   - 핵심: v1.0.0 규칙 (MAJOR.MINOR.PATCH)
 - [ ] **reflog - 실수로 삭제한 커밋 복구**
   - 핵심: reflog, 삭제된 브랜치/커밋 복구
@@ -137,14 +137,15 @@
 | 2026-02-22 | 3단계 원격 | Fork, upstream 동기화, 오픈소스 기여 흐름 | |
 | 2026-02-23 | 3단계 원격 | README & Markdown 문법, 뱃지, 잘 만든 README 구성 | |
 | 2026-02-24 | 4단계 고급 | stash 임시 저장, pop/apply, -u, stash 관리 | |
+| 2026-02-25 | 4단계 고급 | tag (lightweight/annotated, push), 시맨틱 버전 (MAJOR.MINOR.PATCH) | |
 
 ---
 
 ## 진행 현황
 
 - **총 항목**: 34개
-- **완료**: 20개
-- **진행률**: 59%
+- **완료**: 22개
+- **진행률**: 65%
 
 ---
 

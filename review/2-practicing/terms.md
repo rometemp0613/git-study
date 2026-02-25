@@ -11,10 +11,6 @@
 - **git cherry-pick --no-commit (-n)**: 커밋하지 않고 스테이징에만 올림. 여러 커밋을 하나로 합칠 때 유용.
 - **git cherry-pick --abort**: cherry-pick 취소하고 원래 상태로 돌아감.
 
-## diff
-
-- **git diff가 비어있는 이유**: git add 후에는 Working Directory와 Staging이 같아져서 git diff가 비어있음. 이때는 git diff --staged로 Staging ↔ Repository 비교해야 변경사항이 보임.
-
 ## git status
 
 - **git status -s 읽는 법**: 왼쪽 칸=Staging 상태, 오른쪽 칸=Working Directory 상태. `M ` = staged, ` M` = unstaged, `??` = untracked.
@@ -43,3 +39,13 @@
 ## Pull Request 워크플로우
 
 - **PR 흐름**: 브랜치 → 작업 → push → PR 생성 → 리뷰 → 머지 → 브랜치 삭제.
+
+## Fork
+
+- **Fork vs Clone**: Fork는 서버 간 복사(GitHub→GitHub), Clone은 서버→로컬 복사(GitHub→내 PC).
+- **Fork**: GitHub → GitHub 서버 간 레포 복사. 내 계정에 원본의 사본을 만듦. 오픈소스 기여 시 사용.
+
+## stash
+
+- **git stash**: 작업 중인 변경사항을 임시 저장. 워킹 디렉토리가 깨끗해져서 브랜치 전환 가능.
+- **git stash pop**: 가장 최근 stash를 꺼내고 목록에서 삭제. pop = apply + drop.
