@@ -60,3 +60,16 @@
 ## cherry-pick
 
 - **git cherry-pick --no-commit (-n)**: 커밋하지 않고 스테이징에만 올림. 여러 커밋을 하나로 합칠 때 유용.
+
+## restore (추가)
+
+- **git restore <파일>**: 워킹 디렉토리의 변경사항을 마지막 커밋 상태로 되돌림. 수정 내용이 영구 삭제되므로 위험.
+
+## 시맨틱 버전 관리 (추가)
+
+- **상위 올리면 하위 리셋**: v1.3.7 → v1.4.0 (MINOR +1이면 PATCH=0).
+
+## Fork (origin/upstream)
+
+- **origin**: Fork 후 내 계정의 레포를 가리키는 remote. push 가능.
+- **upstream**: 원본 레포를 가리키는 remote. 읽기 전용.
