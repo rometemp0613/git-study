@@ -2,7 +2,6 @@
 
 ## restore
 
-- **git restore <파일>**: 워킹 디렉토리의 변경사항을 마지막 커밋 상태로 되돌림. 수정 내용이 영구 삭제되므로 위험.
 - **git restore --source <커밋> <파일>**: 특정 커밋 시점의 파일 상태로 되돌림. 기본값은 HEAD.
 - **git restore .**: 현재 디렉토리의 모든 변경 파일을 한 번에 되돌림.
 
@@ -48,14 +47,11 @@
 
 - **마크다운 이미지 vs 링크**: `[텍스트](URL)` = 링크, `![대체텍스트](URL)` = 이미지. `!` 유무 차이.
 
-## Fork (origin/upstream)
-
-- **origin**: Fork 후 내 계정의 레포를 가리키는 remote. push 가능.
-- **upstream**: 원본 레포를 가리키는 remote. 읽기 전용.
 
 ## stash
 
 - **git stash drop stash@{n}**: 특정 stash 삭제.
+- **git stash -u**: untracked(새로 만든) 파일도 포함해서 stash. 기본 stash는 tracked만 저장.
 
 ## tag
 
@@ -67,7 +63,6 @@
 ## 시맨틱 버전 관리
 
 - **MAJOR.MINOR.PATCH**: v1.2.3 형식. MAJOR=호환 깨짐, MINOR=기능 추가, PATCH=버그 수정.
-- **상위 올리면 하위 리셋**: v1.3.7 → v1.4.0 (MINOR +1이면 PATCH=0).
 
 ## reflog
 

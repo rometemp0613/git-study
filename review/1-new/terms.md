@@ -39,7 +39,6 @@
 ## stash
 
 - **git stash apply**: stash를 꺼내되 목록에 유지. 여러 브랜치에 같은 stash 적용할 때 사용.
-- **git stash -u**: untracked(새로 만든) 파일도 포함해서 stash. 기본 stash는 tracked만 저장.
 - **git stash -m "메시지"**: 설명을 달아서 저장. 여러 개 쌓일 때 구분용.
 - **git stash list**: 저장된 stash 목록 보기. stash@{0}이 가장 최근.
 - **git stash clear**: 모든 stash 삭제.
@@ -64,3 +63,15 @@
 - **HEAD@{n}**: n번째 전 행동. `git reset --hard HEAD@{2}`처럼 복구에 사용.
 - **커밋 복구**: reflog에서 해시 찾고 `git reset --hard <해시>`.
 - **브랜치 복구**: reflog에서 해시 찾고 `git branch <이름> <해시>`.
+
+## hooks
+
+- **Hook**: Git 이벤트 시 자동 실행되는 셸 스크립트. `.git/hooks/`에 저장.
+- **pre-commit**: 커밋 직전 실행. 코드 검사, 린트 등. exit 1로 커밋 차단 가능.
+- **commit-msg**: 커밋 메시지 작성 후 실행. 메시지 형식 강제. `$1`로 메시지 파일 경로 받음.
+- **post-commit**: 커밋 완료 후 실행. 알림용. 차단 불가.
+- **pre-push**: push 직전 실행. 테스트, 브랜치 체크. exit 1로 push 차단 가능.
+- **exit 0 / exit 1**: 0=통과(계속 진행), 1=실패(작업 차단).
+- **chmod +x**: Hook 파일에 실행 권한 부여. 없으면 Hook 실행 안 됨.
+- **Hook은 로컬 전용**: `.git/hooks/`는 push 안 됨. 팀원과 자동 공유 불가.
+- **.sample 확장자**: 붙어있으면 비활성화. 제거하면 활성화.

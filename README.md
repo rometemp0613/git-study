@@ -81,7 +81,7 @@
   - 핵심: v1.0.0 규칙 (MAJOR.MINOR.PATCH)
 - [x] **reflog - 실수로 삭제한 커밋 복구**
   - 핵심: reflog, 삭제된 브랜치/커밋 복구
-- [ ] **hooks - 커밋 전후 자동 실행 스크립트**
+- [x] **hooks - 커밋 전후 자동 실행 스크립트**
   - 핵심: pre-commit, post-commit, .git/hooks/
 - [ ] **submodule - 저장소 안의 저장소**
   - 핵심: submodule add, update, 의존성 관리
@@ -139,14 +139,15 @@
 | 2026-02-24 | 4단계 고급 | stash 임시 저장, pop/apply, -u, stash 관리 | |
 | 2026-02-25 | 4단계 고급 | tag (lightweight/annotated, push), 시맨틱 버전 (MAJOR.MINOR.PATCH) | |
 | 2026-02-26 | 4단계 고급 | reflog, 커밋/브랜치 복구, rebase 실수 복구 | |
+| 2026-02-26 | 4단계 고급 | hooks, pre-commit/commit-msg/post-commit/pre-push | 2회차 |
 
 ---
 
 ## 진행 현황
 
 - **총 항목**: 34개
-- **완료**: 23개
-- **진행률**: 68%
+- **완료**: 24개
+- **진행률**: 71%
 
 ---
 
