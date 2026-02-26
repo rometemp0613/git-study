@@ -57,7 +57,6 @@
 - **git tag -l "패턴"**: 패턴으로 tag 필터링. -l 없이 패턴 쓰면 tag 생성 시도됨.
 - **git show <tag>**: tag 상세 정보. annotated는 Tagger/Date/메시지 나오고, lightweight는 커밋 정보만.
 - **git tag -a <tag> -m "msg" <해시>**: 과거 커밋에 뒤늦게 tag 붙이기.
-- **tag는 별도로 push**: `git push`만으론 tag 안 올라감. `git push origin <tag>` 또는 `--tags` 필요.
 - **git push origin --delete <tag>**: 원격 tag 삭제. 로컬은 `git tag -d`로 따로 삭제.
 
 ## 시맨틱 버전 관리
@@ -68,3 +67,13 @@
 - **rc**: Release Candidate. 정식 출시 직전 최종 테스트 버전.
 - **v0.x.x**: 초기 개발 단계. 아직 정식 아님, 언제든 바뀔 수 있음.
 - **gh release create**: `gh release create v1.0.0 --title "v1.0.0" --notes "설명"`. tag 기반으로 GitHub Release 생성.
+
+## reflog
+
+- **reflog**: Reference Log. HEAD 이동 기록을 저장하는 로컬 전용 로그. 90일 보관, clone하면 없음.
+- **git reflog**: HEAD의 이동 기록 보기. 모든 행동(commit, reset, checkout, rebase 등) 기록됨.
+- **git reflog show <브랜치>**: 특정 브랜치의 이동 기록만 보기.
+- **HEAD@{n}**: n번째 전 행동. `git reset --hard HEAD@{2}`처럼 복구에 사용.
+- **커밋 복구**: reflog에서 해시 찾고 `git reset --hard <해시>`.
+- **브랜치 복구**: reflog에서 해시 찾고 `git branch <이름> <해시>`.
+- **git log vs git reflog**: log는 커밋 부모-자식 관계, reflog는 HEAD 이동 행동 기록. reset으로 날린 커밋도 reflog에는 남아있음.

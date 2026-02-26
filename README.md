@@ -79,7 +79,7 @@
   - 핵심: tag, annotated tag, tag push
 - [x] **시맨틱 버전 관리**
   - 핵심: v1.0.0 규칙 (MAJOR.MINOR.PATCH)
-- [ ] **reflog - 실수로 삭제한 커밋 복구**
+- [x] **reflog - 실수로 삭제한 커밋 복구**
   - 핵심: reflog, 삭제된 브랜치/커밋 복구
 - [ ] **hooks - 커밋 전후 자동 실행 스크립트**
   - 핵심: pre-commit, post-commit, .git/hooks/
@@ -138,14 +138,15 @@
 | 2026-02-23 | 3단계 원격 | README & Markdown 문법, 뱃지, 잘 만든 README 구성 | |
 | 2026-02-24 | 4단계 고급 | stash 임시 저장, pop/apply, -u, stash 관리 | |
 | 2026-02-25 | 4단계 고급 | tag (lightweight/annotated, push), 시맨틱 버전 (MAJOR.MINOR.PATCH) | |
+| 2026-02-26 | 4단계 고급 | reflog, 커밋/브랜치 복구, rebase 실수 복구 | |
 
 ---
 
 ## 진행 현황
 
 - **총 항목**: 34개
-- **완료**: 22개
-- **진행률**: 65%
+- **완료**: 23개
+- **진행률**: 68%
 
 ---
 

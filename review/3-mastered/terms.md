@@ -43,3 +43,20 @@
 ## diff
 
 - **git diff가 비어있는 이유**: git add 후에는 Working Directory와 Staging이 같아져서 git diff가 비어있음. 이때는 git diff --staged로 Staging ↔ Repository 비교해야 변경사항이 보임.
+
+## stash
+
+- **git stash pop**: 가장 최근 stash를 꺼내고 목록에서 삭제. pop = apply + drop.
+- **git stash**: 작업 중인 변경사항을 임시 저장. 워킹 디렉토리가 깨끗해져서 브랜치 전환 가능.
+
+## git status
+
+- **git status -s 읽는 법**: 왼쪽 칸=Staging 상태, 오른쪽 칸=Working Directory 상태. `M ` = staged, ` M` = unstaged, `??` = untracked.
+
+## tag
+
+- **tag는 별도로 push**: `git push`만으론 tag 안 올라감. `git push origin <tag>` 또는 `--tags` 필요.
+
+## cherry-pick
+
+- **git cherry-pick --no-commit (-n)**: 커밋하지 않고 스테이징에만 올림. 여러 커밋을 하나로 합칠 때 유용.
