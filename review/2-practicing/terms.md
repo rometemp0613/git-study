@@ -10,7 +10,6 @@
 
 - **git cherry-pick --abort**: cherry-pick 취소하고 원래 상태로 돌아감.
 
-
 ## 원격 추적 브랜치
 
 - **git branch -r**: 원격 추적 브랜치만 보기.
@@ -41,3 +40,36 @@
 - **Fork vs Clone**: Fork는 서버 간 복사(GitHub→GitHub), Clone은 서버→로컬 복사(GitHub→내 PC).
 - **Fork**: GitHub → GitHub 서버 간 레포 복사. 내 계정에 원본의 사본을 만듦. 오픈소스 기여 시 사용.
 
+## Issue & Project
+
+- **closes/fixes/resolves #번호**: PR 본문이나 커밋에 쓰면 머지 시 해당 이슈 자동 Close.
+
+## README & Markdown
+
+- **마크다운 이미지 vs 링크**: `[텍스트](URL)` = 링크, `![대체텍스트](URL)` = 이미지. `!` 유무 차이.
+
+## Fork (origin/upstream)
+
+- **origin**: Fork 후 내 계정의 레포를 가리키는 remote. push 가능.
+- **upstream**: 원본 레포를 가리키는 remote. 읽기 전용.
+
+## stash
+
+- **git stash drop stash@{n}**: 특정 stash 삭제.
+
+## tag
+
+- **tag**: 특정 커밋에 붙이는 영구 이름표. 브랜치와 달리 움직이지 않는 고정 포인터.
+- **lightweight tag**: 이름만 붙이는 태그. 메타데이터 없음. `git tag v0.1`
+- **annotated tag**: 만든 사람, 날짜, 메시지 포함. `git tag -a v1.0 -m "메시지"`. 실무에서 사용.
+- **git tag -a <tag> -m "msg" <해시>**: 과거 커밋에 뒤늦게 tag 붙이기.
+
+## 시맨틱 버전 관리
+
+- **MAJOR.MINOR.PATCH**: v1.2.3 형식. MAJOR=호환 깨짐, MINOR=기능 추가, PATCH=버그 수정.
+- **상위 올리면 하위 리셋**: v1.3.7 → v1.4.0 (MINOR +1이면 PATCH=0).
+
+## reflog
+
+- **reflog**: Reference Log. HEAD 이동 기록을 저장하는 로컬 전용 로그. 90일 보관, clone하면 없음.
+- **git log vs git reflog**: log는 커밋 부모-자식 관계, reflog는 HEAD 이동 행동 기록. reset으로 날린 커밋도 reflog에는 남아있음.
