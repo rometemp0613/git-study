@@ -83,7 +83,7 @@
   - 핵심: reflog, 삭제된 브랜치/커밋 복구
 - [x] **hooks - 커밋 전후 자동 실행 스크립트**
   - 핵심: pre-commit, post-commit, .git/hooks/
-- [ ] **submodule - 저장소 안의 저장소**
+- [x] **submodule - 저장소 안의 저장소**
   - 핵심: submodule add, update, 의존성 관리
 - [ ] **Git Alias - 자주 쓰는 명령어 단축키**
   - 핵심: git config --global alias.co checkout
@@ -140,14 +140,15 @@
 | 2026-02-25 | 4단계 고급 | tag (lightweight/annotated, push), 시맨틱 버전 (MAJOR.MINOR.PATCH) | |
 | 2026-02-26 | 4단계 고급 | reflog, 커밋/브랜치 복구, rebase 실수 복구 | |
 | 2026-02-26 | 4단계 고급 | hooks, pre-commit/commit-msg/post-commit/pre-push | 2회차 |
+| 2026-02-27 | 4단계 고급 | submodule, 추가/업데이트/삭제, 독립 저장소 개념 | |
 
 ---
 
 ## 진행 현황
 
 - **총 항목**: 34개
-- **완료**: 24개
-- **진행률**: 71%
+- **완료**: 25개
+- **진행률**: 74%
 
 ---
 
