@@ -44,6 +44,37 @@ my-project/
   - `origin/HEAD` → 원본 A의 기본 브랜치 (보통 origin/main과 같은 곳)
 - B(메인 프로젝트)에서 `git log`를 치면 → B 자체의 커밋만 보임 (C의 로그와 완전 별개)
 
+#### 왜 셋 다 같은 커밋에 있어?
+```
+be7ef5a (HEAD -> main, origin/main, origin/HEAD)
+```
+- `HEAD -> main` → C의 HEAD가 main을 가리키고, main이 be7ef5a에 있다
+- `origin/main` → A(원본)의 main도 be7ef5a에 있다
+- `origin/HEAD` → A(원본)의 기본 브랜치도 be7ef5a에 있다
+- **방금 clone(또는 pull)해서 최신 상태로 맞춰졌으니까 당연히 같은 위치**
+
+만약 A(원본)에서 새 커밋을 만들면:
+```
+be7ef5a (HEAD -> main)              ← C는 여기에 멈춰있음
+    ↓
+fff1234                             ← A는 여기로 이동
+
+C에서 git fetch 하면:
+be7ef5a (HEAD -> main)              ← C는 여기
+    ↓
+fff1234 (origin/main, origin/HEAD)  ← origin이 앞서감
+```
+이전에 배운 fetch 개념이랑 완전히 같은 원리!
+
+#### 비유
+```
+내 집(B) 안에 세입자(C)가 살고 있다.
+세입자(C)는 자기 고향(A)이 따로 있다. ← 이게 origin
+내 집(B)의 주소와 세입자의 고향 주소는 전혀 다른 것.
+B에서 git log → 내 집 이력
+C에서 git log → 세입자의 이력 (고향 정보 포함)
+```
+
 ---
 
 ## 주요 명령어
@@ -67,18 +98,46 @@ git submodule update     # 실제 파일 다운로드
 ⚠️ 그냥 `git clone`만 하면 submodule 폴더가 **비어있음!**
 
 ### submodule 업데이트 (원본에 새 커밋이 생겼을 때)
-```bash
-# 1. submodule 안에서 pull (파일을 실제로 가져옴)
-cd vendor/shared-lib
-git pull origin main
 
-# 2. 메인으로 돌아와서 커밋 (포인터를 업데이트)
+#### 상황
+```
+A(원본):      172d499 → 8331f15 (새 커밋 생김!)
+C(submodule): 172d499             ← 여기에 멈춰있음
+B(메인):      "C는 172d499를 쓰고 있다"
+```
+
+#### 1단계: C 안에서 pull (파일을 실제로 가져옴)
+```bash
+cd vendor/shared-lib
+git pull origin main     # A에서 최신 가져오기
+```
+```
+C: 172d499 → 8331f15 (HEAD -> main)  ← C가 최신으로 이동!
+B: "C는 172d499를 쓰고 있다"          ← 아직 옛날 기록 그대로
+```
+**C의 파일은 업데이트됐지만, B는 아직 모르는 상태!**
+
+#### 2단계: B에서 커밋 (포인터를 업데이트)
+```bash
 cd ../..
+git status
+# → "수정함: vendor/shared-lib (새 커밋)" ← B가 눈치챔!
+
 git add vendor/shared-lib
 git commit -m "chore: shared-lib 업데이트"
 ```
-- pull은 파일을 가져오는 것, 메인 커밋은 "이 버전 쓴다"를 기록하는 것
-- **둘 다 해야 완성!**
+```
+C: 172d499 → 8331f15 (HEAD -> main)
+B: "C는 8331f15를 쓰고 있다"  ← 포인터 업데이트 완료!
+```
+
+#### 왜 2번 해야 해?
+| 단계 | 뭘 하는 거야 | 안 하면? |
+|------|-------------|---------|
+| C에서 pull | 실제 파일을 가져옴 | 파일이 안 바뀜 |
+| B에서 커밋 | "이 버전 쓴다"를 기록 | 팀원이 clone하면 옛날 버전 받음 |
+
+**pull은 파일을 가져오는 거, 메인 커밋은 "이 버전 쓴다"를 팀에 알리는 거. 둘 다 해야 완성!**
 
 ### submodule 상태 확인
 ```bash
