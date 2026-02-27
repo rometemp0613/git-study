@@ -75,3 +75,16 @@
 - **chmod +x**: Hook 파일에 실행 권한 부여. 없으면 Hook 실행 안 됨.
 - **Hook은 로컬 전용**: `.git/hooks/`는 push 안 됨. 팀원과 자동 공유 불가.
 - **.sample 확장자**: 붙어있으면 비활성화. 제거하면 활성화.
+
+## submodule
+
+- **submodule**: 내 저장소 안에 다른 저장소를 포함. 파일이 아닌 커밋 해시(포인터)만 기록.
+- **git submodule add <URL> <경로>**: submodule 추가. 경로는 자유롭게 설정 가능.
+- **.gitmodules**: submodule 설정 파일. URL과 경로가 기록됨.
+- **git clone --recurse-submodules**: submodule 포함 clone. 안 쓰면 submodule 폴더가 비어있음.
+- **git submodule init + update**: clone 후 빈 submodule 초기화. init은 등록, update는 파일 다운로드.
+- **git submodule update --remote**: 원격 최신 커밋으로 업데이트. (그냥 update는 메인이 기록한 커밋으로 맞추는 것)
+- **git submodule status**: 상태 확인. 앞 기호: 공백=정상, `-`=init 안 됨, `+`=커밋이 다름.
+- **submodule 삭제 3단계**: `deinit` → `rm -rf .git/modules/...` → `git rm`. 번거롭지만 이 순서대로.
+- **submodule 업데이트 2단계**: submodule 안에서 pull(파일 가져옴) → 메인에서 커밋(포인터 기록). 둘 다 해야 완성.
+- **submodule 폴더는 독립된 Git 저장소**: clone으로 만들어졌으므로 자기만의 remote, log, branch가 별도로 존재.

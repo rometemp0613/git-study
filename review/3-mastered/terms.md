@@ -73,3 +73,23 @@
 
 - **origin**: Fork 후 내 계정의 레포를 가리키는 remote. push 가능.
 - **upstream**: 원본 레포를 가리키는 remote. 읽기 전용.
+
+## tag (추가)
+
+- **tag**: 특정 커밋에 붙이는 영구 이름표. 브랜치와 달리 움직이지 않는 고정 포인터.
+- **lightweight tag**: 이름만 붙이는 태그. 메타데이터 없음. `git tag v0.1`
+- **annotated tag**: 만든 사람, 날짜, 메시지 포함. `git tag -a v1.0 -m "메시지"`. 실무에서 사용.
+- **git tag -a <tag> -m "msg" <해시>**: 과거 커밋에 뒤늦게 tag 붙이기.
+
+## 시맨틱 버전 관리 (추가)
+
+- **MAJOR.MINOR.PATCH**: v1.2.3 형식. MAJOR=호환 깨짐, MINOR=기능 추가, PATCH=버그 수정.
+
+## reflog (추가)
+
+- **reflog**: Reference Log. HEAD 이동 기록을 저장하는 로컬 전용 로그. 90일 보관, clone하면 없음.
+- **git log vs git reflog**: log는 커밋 부모-자식 관계, reflog는 HEAD 이동 행동 기록. reset으로 날린 커밋도 reflog에는 남아있음.
+
+## stash (추가)
+
+- **git stash -u**: untracked(새로 만든) 파일도 포함해서 stash. 기본 stash는 tracked만 저장.
