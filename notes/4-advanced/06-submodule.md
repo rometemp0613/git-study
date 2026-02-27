@@ -157,6 +157,37 @@ git commit -m "chore: submodule 제거"
 
 ---
 
+## Git 2.38+ 로컬 파일 프로토콜 보안
+
+### 무슨 일이 있었나?
+- 2022년에 Git의 보안 취약점 발견
+- Git 2.38부터 **로컬 파일 경로(`file://`)를 통한 clone/fetch가 기본 차단**됨
+- submodule add, submodule update 등에서 로컬 경로를 쓰면 이 에러가 남:
+  ```
+  fatal: transport 'file' not allowed
+  ```
+
+### 해결 방법
+```bash
+# 해당 명령어에만 일시적으로 허용 (안전)
+git -c protocol.file.allow=always submodule add /tmp/shared-lib libs/shared-lib
+git -c protocol.file.allow=always submodule update --remote
+```
+
+### 실무에서는 걱정 없음
+실무에서 submodule은 거의 **HTTPS나 SSH URL**을 쓰기 때문에 이 보안 정책에 걸리지 않음:
+```bash
+# 실무 (정상 작동)
+git submodule add https://github.com/someone/lib.git libs/lib
+git submodule add git@github.com:someone/lib.git libs/lib
+
+# 로컬 실습 (차단됨)
+git submodule add /tmp/shared-lib libs/shared-lib
+```
+우리는 실습 환경이라 로컬 경로를 써서 걸린 것.
+
+---
+
 ## 실습에서 배운 것
 - submodule add → `.gitmodules`와 submodule 폴더가 staging에 올라감
 - 원본에 새 커밋 생겨도 메인의 submodule에는 자동 반영 안 됨 (포인터 고정)
