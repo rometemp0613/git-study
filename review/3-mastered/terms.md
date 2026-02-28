@@ -93,3 +93,8 @@
 ## stash (추가)
 
 - **git stash -u**: untracked(새로 만든) 파일도 포함해서 stash. 기본 stash는 tracked만 저장.
+- **git stash drop stash@{n}**: 특정 stash 삭제.
+
+## 원격 추적 브랜치 (추가)
+
+- **git branch -vv**: 로컬 브랜치의 upstream 연결 상태와 ahead/behind 확인.

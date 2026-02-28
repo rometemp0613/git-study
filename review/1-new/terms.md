@@ -88,3 +88,13 @@
 - **submodule 삭제 3단계**: `deinit` → `rm -rf .git/modules/...` → `git rm`. 번거롭지만 이 순서대로.
 - **submodule 업데이트 2단계**: submodule 안에서 pull(파일 가져옴) → 메인에서 커밋(포인터 기록). 둘 다 해야 완성.
 - **submodule 폴더는 독립된 Git 저장소**: clone으로 만들어졌으므로 자기만의 remote, log, branch가 별도로 존재.
+
+## alias
+
+- **git config --global alias.<단축키> '<명령어>'**: alias 등록. `git` 뒤 부분만 적음.
+- **git config --global --get-regexp alias**: 등록된 alias 전체 목록 확인.
+- **git config --global --unset alias.<단축키>**: alias 삭제.
+- **~/.gitconfig**: `--global` alias가 저장되는 파일. `[alias]` 섹션에 기록됨.
+- **.git/config**: `--local` (기본) alias가 저장되는 파일. 해당 저장소에서만 사용.
+- **! 접두사**: 셸 명령어를 alias로 만들 때 사용. `'!gitk'`처럼 앞에 붙임.
+- **git config --global --edit**: 설정 파일을 직접 편집기로 열기.

@@ -85,7 +85,7 @@
   - 핵심: pre-commit, post-commit, .git/hooks/
 - [x] **submodule - 저장소 안의 저장소**
   - 핵심: submodule add, update, 의존성 관리
-- [ ] **Git Alias - 자주 쓰는 명령어 단축키**
+- [x] **Git Alias - 자주 쓰는 명령어 단축키**
   - 핵심: git config --global alias.co checkout
 
 ### 5단계: 협업 전략
@@ -141,14 +141,15 @@
 | 2026-02-26 | 4단계 고급 | reflog, 커밋/브랜치 복구, rebase 실수 복구 | |
 | 2026-02-26 | 4단계 고급 | hooks, pre-commit/commit-msg/post-commit/pre-push | 2회차 |
 | 2026-02-27 | 4단계 고급 | submodule, 추가/업데이트/삭제, 독립 저장소 개념 | |
+| 2026-02-28 | 4단계 고급 | Git Alias, 단축키 등록/확인/삭제, ~/.gitconfig | 4단계 완료! |
 
 ---
 
 ## 진행 현황
 
 - **총 항목**: 34개
-- **완료**: 25개
-- **진행률**: 74%
+- **완료**: 26개
+- **진행률**: 76%
 
 ---
 
