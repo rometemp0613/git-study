@@ -13,7 +13,6 @@
 
 - **git branch -r**: 원격 추적 브랜치만 보기.
 - **git branch -a**: 로컬 + 원격 추적 브랜치 모두 보기.
-- **git branch -vv**: 로컬 브랜치의 upstream 연결 상태와 ahead/behind 확인.
 - **upstream (-u)**: `git push -u origin main`으로 설정. 이후 `git push`만으로 push 가능.
 - **push도 origin/main을 업데이트함**: push 성공 후 로컬의 origin/main도 push한 커밋 위치로 이동.
 
@@ -49,5 +48,3 @@
 
 
 ## stash
-
-- **git stash drop stash@{n}**: 특정 stash 삭제.
