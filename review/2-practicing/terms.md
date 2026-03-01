@@ -11,7 +11,6 @@
 
 ## 원격 추적 브랜치
 
-- **git branch -r**: 원격 추적 브랜치만 보기.
 - **git branch -a**: 로컬 + 원격 추적 브랜치 모두 보기.
 - **upstream (-u)**: `git push -u origin main`으로 설정. 이후 `git push`만으로 push 가능.
 - **push도 origin/main을 업데이트함**: push 성공 후 로컬의 origin/main도 push한 커밋 위치로 이동.
@@ -40,11 +39,15 @@
 
 ## Issue & Project
 
-- **closes/fixes/resolves #번호**: PR 본문이나 커밋에 쓰면 머지 시 해당 이슈 자동 Close.
-
 ## README & Markdown
 
 - **마크다운 이미지 vs 링크**: `[텍스트](URL)` = 링크, `![대체텍스트](URL)` = 이미지. `!` 유무 차이.
 
 
 ## stash
+
+- **git stash apply**: stash를 꺼내되 목록에 유지. 여러 브랜치에 같은 stash 적용할 때 사용.
+
+## alias
+
+- **! 접두사**: 셸 명령어를 alias로 만들 때 사용. `'!gitk'`처럼 앞에 붙임.

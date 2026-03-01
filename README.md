@@ -90,7 +90,7 @@
 
 ### 5단계: 협업 전략
 
-- [ ] **Git Flow**
+- [x] **Git Flow**
   - 핵심: main, develop, feature, release, hotfix 브랜치
 - [ ] **GitHub Flow**
   - 핵심: 간소화된 전략, main + feature 브랜치
@@ -142,14 +142,15 @@
 | 2026-02-26 | 4단계 고급 | hooks, pre-commit/commit-msg/post-commit/pre-push | 2회차 |
 | 2026-02-27 | 4단계 고급 | submodule, 추가/업데이트/삭제, 독립 저장소 개념 | |
 | 2026-02-28 | 4단계 고급 | Git Alias, 단축키 등록/확인/삭제, ~/.gitconfig | 4단계 완료! |
+| 2026-03-01 | 5단계 협업 | Git Flow, 5가지 브랜치 전략, --no-ff | |
 
 ---
 
 ## 진행 현황
 
 - **총 항목**: 34개
-- **완료**: 26개
-- **진행률**: 76%
+- **완료**: 27개
+- **진행률**: 79%
 
 ---
 
