@@ -98,3 +98,8 @@
 ## 원격 추적 브랜치 (추가)
 
 - **git branch -vv**: 로컬 브랜치의 upstream 연결 상태와 ahead/behind 확인.
+- **git branch -r**: 원격 추적 브랜치만 보기.
+
+## Issue & Project (추가)
+
+- **closes/fixes/resolves #번호**: PR 본문이나 커밋에 쓰면 머지 시 해당 이슈 자동 Close.

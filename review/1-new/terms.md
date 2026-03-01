@@ -38,7 +38,6 @@
 
 ## stash
 
-- **git stash apply**: stash를 꺼내되 목록에 유지. 여러 브랜치에 같은 stash 적용할 때 사용.
 - **git stash -m "메시지"**: 설명을 달아서 저장. 여러 개 쌓일 때 구분용.
 - **git stash list**: 저장된 stash 목록 보기. stash@{0}이 가장 최근.
 - **git stash clear**: 모든 stash 삭제.
@@ -96,5 +95,14 @@
 - **git config --global --unset alias.<단축키>**: alias 삭제.
 - **~/.gitconfig**: `--global` alias가 저장되는 파일. `[alias]` 섹션에 기록됨.
 - **.git/config**: `--local` (기본) alias가 저장되는 파일. 해당 저장소에서만 사용.
-- **! 접두사**: 셸 명령어를 alias로 만들 때 사용. `'!gitk'`처럼 앞에 붙임.
 - **git config --global --edit**: 설정 파일을 직접 편집기로 열기.
+
+## Git Flow
+
+- **Git Flow**: Vincent Driessen이 제안한 브랜치 전략. main, develop, feature, release, hotfix 5가지 브랜치 사용.
+- **main**: 항상 배포 가능한 코드. 직접 커밋 금지. 머지 시 태그 붙임.
+- **develop**: 다음 릴리스 준비용 통합 브랜치. feature가 여기로 머지됨.
+- **feature/***: develop에서 분기 → develop으로 머지. 새 기능 개발용.
+- **release/***: develop에서 분기 → main + develop 둘 다에 머지. 출시 마무리용.
+- **hotfix/***: main에서 분기 → main + develop 둘 다에 머지. 긴급 버그 수정용.
+- **--no-ff**: No Fast-Forward. 머지 커밋을 강제 생성해서 브랜치 분기/합류 히스토리를 보존.
