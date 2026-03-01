@@ -60,3 +60,51 @@ git diff HEAD~3 --name-only
 # 특정 커밋 정보 보기
 git show HEAD~2 --oneline --no-patch
 ```
+
+---
+
+## 실습 가이드: 처음부터 따라하기
+
+```bash
+# 1. 실습용 폴더 만들기
+mkdir git-head-practice && cd git-head-practice
+git init
+
+# 2. 커밋 3개 만들기
+echo "v1" > file.txt && git add . && git commit -m "커밋 1"
+echo "v2" > file.txt && git add . && git commit -m "커밋 2"
+echo "v3" > file.txt && git add . && git commit -m "커밋 3"
+
+# 3. HEAD 확인
+cat .git/HEAD
+# 결과: ref: refs/heads/main   ← main 브랜치를 가리킴
+
+# 4. HEAD~n으로 과거 커밋 접근
+git log --oneline
+# 결과: abc1234 커밋 3    ← HEAD (현재)
+#        def5678 커밋 2    ← HEAD~1
+#        ghi9012 커밋 1    ← HEAD~2
+
+# 5. HEAD~1과 비교
+git diff HEAD~1
+# 결과: v2 → v3 변경사항 표시
+
+# 6. HEAD~2와 비교
+git diff HEAD~2
+# 결과: v1 → v3 변경사항 표시
+
+# 7. 범위 지정으로 로그 보기
+git log --oneline HEAD~2..HEAD
+# 결과: 커밋 3, 커밋 2만 표시 (커밋 1은 제외)
+
+# 8. 변경된 파일 이름만 보기
+git diff HEAD~2 --name-only
+# 결과: file.txt
+
+# 9. 특정 커밋 정보 보기
+git show HEAD~1 --oneline --no-patch
+# 결과: def5678 커밋 2
+
+# 실습 끝! 정리하려면:
+cd .. && rm -rf git-head-practice
+```

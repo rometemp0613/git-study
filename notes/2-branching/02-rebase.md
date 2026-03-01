@@ -262,3 +262,130 @@ pick 0e3bbaf 주문 내역 기능 추가
 ```bash
 git config --global core.editor "code --wait"
 ```
+
+---
+
+## 주의사항 & 흔한 실수 (Interactive Rebase 편)
+
+### 1. reword와 squash를 혼동하지 마라!
+
+이 둘은 완전히 다른 동작이다:
+
+| 명령어 | 하는 일 | 커밋 수 변화 |
+|--------|---------|-------------|
+| `reword` (r) | 커밋 메시지**만** 수정. 코드 변경 없음 | 그대로 유지 |
+| `squash` (s) | **이전 커밋과 합침**. 코드 + 메시지 모두 합쳐짐 | 줄어듦 |
+
+```
+# reword: 커밋 개수는 그대로, 메시지만 바뀜
+Before: A ─ B("오탈") ─ C
+After:  A ─ B'("수정됨") ─ C'
+
+# squash: 커밋이 합쳐져서 개수가 줄어듦
+Before: A ─ B ─ C
+After:  A ─ BC (B와 C가 하나로)
+```
+
+**기억법:** reword = re + word (단어를 다시 쓴다) = 메시지만 수정
+
+### 2. reword는 커밋 내용(코드)을 수정하지 않는다
+
+reword를 선택하면 에디터가 열리면서 **커밋 메시지 편집 화면만** 나온다.
+코드를 수정하고 싶으면 `edit` (e)을 사용해야 한다.
+
+---
+
+## 실습 가이드 (처음부터 끝까지 따라하기)
+
+### 실습 1: squash로 커밋 합치기
+
+```bash
+# === 준비 ===
+mkdir rebase-practice && cd rebase-practice
+git init
+
+# === 커밋 3개 만들기 ===
+echo "기능 A" > feature.txt
+git add feature.txt
+git commit -m "feat: 기능 A 추가"
+
+echo "기능 A 수정" >> feature.txt
+git add feature.txt
+git commit -m "fix: 기능 A 오타 수정"
+
+echo "기능 A 완성" >> feature.txt
+git add feature.txt
+git commit -m "fix: 기능 A 마무리"
+
+# 현재 로그 확인 (3개 커밋)
+git log --oneline
+
+# === squash 실행 ===
+# 아래 명령어 대신 non-interactive 방식으로 체험
+# (실제로는 git rebase -i HEAD~3 을 쓰지만, 여기선 결과만 확인)
+git reset --soft HEAD~2           # 최근 2개 커밋을 스테이징으로 되돌림
+git commit --amend -m "feat: 기능 A 추가 (오타 수정 및 마무리 포함)"
+
+# 결과 확인 - 3개가 1개로 합쳐짐!
+git log --oneline
+
+# === 정리 ===
+cd ..
+rm -rf rebase-practice
+```
+
+### 실습 2: 기본 rebase 체험 (feature를 main 위로)
+
+```bash
+# === 준비 ===
+mkdir rebase-practice2 && cd rebase-practice2
+git init
+
+# === main에 초기 커밋 ===
+echo "v1" > main.txt
+git add main.txt
+git commit -m "init: v1"
+
+# === feature 브랜치 생성 + 작업 ===
+git switch -c feature
+echo "feature 작업" > feature.txt
+git add feature.txt
+git commit -m "feat: feature 작업"
+
+# === main에서도 새 커밋 추가 (분기 발생) ===
+git switch main
+echo "v2" >> main.txt
+git add main.txt
+git commit -m "update: v2"
+
+# 현재 상태 확인
+git log --oneline --all --graph
+# 출력 예:
+# * (main)  update: v2
+# | * (feature)  feat: feature 작업
+# |/
+# * init: v1
+
+# === feature에서 rebase 실행 ===
+git switch feature
+git rebase main        # feature를 main 위로 옮겨 심기
+
+# 결과 확인 - 일직선이 됨!
+git log --oneline --all --graph
+# 출력 예:
+# * (feature) feat: feature 작업
+# * (main) update: v2
+# * init: v1
+
+# === 정리 ===
+cd ..
+rm -rf rebase-practice2
+```
+
+### 각 단계에서 확인할 것
+
+| 단계 | 확인 명령어 | 기대 결과 |
+|------|------------|----------|
+| 분기 후 (rebase 전) | `git log --oneline --all --graph` | Y자 형태 (갈라짐) |
+| rebase 후 | `git log --oneline --all --graph` | 일직선 형태 |
+| squash 후 | `git log --oneline` | 커밋 수가 줄어듦 |
