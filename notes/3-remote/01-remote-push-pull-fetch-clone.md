@@ -48,3 +48,109 @@
      └── pull ──────────────────┘
               (fetch + merge)
 ```
+
+---
+
+## 실습 가이드: 처음부터 따라하기
+
+### 준비: 로컬 bare repo로 원격 저장소 시뮬레이션
+
+```bash
+# 1. 실습용 폴더 만들기
+mkdir ~/git-remote-practice && cd ~/git-remote-practice
+
+# 2. "원격 저장소" 역할을 할 bare repo 생성
+git init --bare remote-repo.git
+# → bare repo는 워킹 디렉토리 없이 .git 내용만 있는 저장소
+
+# 3. "로컬 저장소 A" 생성 (개발자 A)
+git init local-a
+cd local-a
+git remote add origin ../remote-repo.git
+# → origin이라는 이름으로 원격 저장소 연결
+```
+
+### Step 1: push 해보기
+
+```bash
+# local-a에서 작업
+echo "첫 번째 파일" > hello.txt
+git add hello.txt
+git commit -m "first commit"
+
+# 원격에 push
+git push -u origin main
+# → -u로 upstream 설정. 이후 git push만으로 가능
+# → 결과: remote-repo.git에 main 브랜치 생성됨
+```
+
+### Step 2: clone 해보기
+
+```bash
+# 상위 폴더로 이동
+cd ~/git-remote-practice
+
+# "로컬 저장소 B" — clone으로 생성 (개발자 B)
+git clone remote-repo.git local-b
+cd local-b
+
+# remote 확인
+git remote -v
+# → origin이 자동으로 설정되어 있음
+```
+
+### Step 3: fetch vs pull 비교
+
+```bash
+# local-a에서 새 커밋 만들기
+cd ~/git-remote-practice/local-a
+echo "A가 추가한 내용" >> hello.txt
+git add . && git commit -m "update from A"
+git push
+
+# local-b에서 fetch로 확인
+cd ~/git-remote-practice/local-b
+git fetch
+# → origin/main만 업데이트됨. 내 main은 그대로!
+
+git log --oneline --all
+# → origin/main이 앞서 있는 걸 확인
+
+git diff main origin/main
+# → 차이점 확인 가능
+
+# 확인 후 merge
+git merge origin/main
+# → 이제 로컬 main도 최신!
+```
+
+### Step 4: pull은 한 번에
+
+```bash
+# local-a에서 또 커밋
+cd ~/git-remote-practice/local-a
+echo "또 추가" >> hello.txt
+git add . && git commit -m "another update from A"
+git push
+
+# local-b에서 pull (fetch + merge 한 번에)
+cd ~/git-remote-practice/local-b
+git pull
+# → fetch + merge가 동시에 일어남
+```
+
+### 정리
+
+```bash
+# 실습 끝나면 정리
+rm -rf ~/git-remote-practice
+```
+
+---
+
+## 주의사항 & 흔한 실수
+
+- `git push`할 때 원격에 내 변경사항과 충돌하는 커밋이 있으면 **rejected** 됨 → 먼저 pull 후 push
+- `git pull`로 바로 받으면 편하지만, **예상 못한 merge 충돌**이 발생할 수 있음 → 중요한 작업 전에는 fetch → diff → merge 순서 추천
+- remote 이름은 꼭 `origin`일 필요 없음. 관례일 뿐!
+- `git push`만 하면 **tag는 올라가지 않음**. 태그는 별도로 push 필요
