@@ -38,7 +38,6 @@
 
 ## stash
 
-- **git stash -m "메시지"**: 설명을 달아서 저장. 여러 개 쌓일 때 구분용.
 - **git stash list**: 저장된 stash 목록 보기. stash@{0}이 가장 최근.
 - **git stash clear**: 모든 stash 삭제.
 
@@ -71,7 +70,6 @@
 - **post-commit**: 커밋 완료 후 실행. 알림용. 차단 불가.
 - **pre-push**: push 직전 실행. 테스트, 브랜치 체크. exit 1로 push 차단 가능.
 - **exit 0 / exit 1**: 0=통과(계속 진행), 1=실패(작업 차단).
-- **chmod +x**: Hook 파일에 실행 권한 부여. 없으면 Hook 실행 안 됨.
 - **Hook은 로컬 전용**: `.git/hooks/`는 push 안 됨. 팀원과 자동 공유 불가.
 - **.sample 확장자**: 붙어있으면 비활성화. 제거하면 활성화.
 
@@ -105,4 +103,3 @@
 - **feature/***: develop에서 분기 → develop으로 머지. 새 기능 개발용.
 - **release/***: develop에서 분기 → main + develop 둘 다에 머지. 출시 마무리용.
 - **hotfix/***: main에서 분기 → main + develop 둘 다에 머지. 긴급 버그 수정용.
-- **--no-ff**: No Fast-Forward. 머지 커밋을 강제 생성해서 브랜치 분기/합류 히스토리를 보존.

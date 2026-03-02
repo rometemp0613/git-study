@@ -34,8 +34,8 @@
 
 ## Fork
 
-- **Fork vs Clone**: Fork는 서버 간 복사(GitHub→GitHub), Clone은 서버→로컬 복사(GitHub→내 PC).
-- **Fork**: GitHub → GitHub 서버 간 레포 복사. 내 계정에 원본의 사본을 만듦. 오픈소스 기여 시 사용.
+
+## Git Flow
 
 ## Issue & Project
 
@@ -44,9 +44,13 @@
 - **마크다운 이미지 vs 링크**: `[텍스트](URL)` = 링크, `![대체텍스트](URL)` = 이미지. `!` 유무 차이.
 
 
+## hooks
+
+- **chmod +x**: Hook 파일에 실행 권한 부여. 없으면 Hook 실행 안 됨.
+
 ## stash
 
-- **git stash apply**: stash를 꺼내되 목록에 유지. 여러 브랜치에 같은 stash 적용할 때 사용.
+- **git stash -m "메시지"**: 설명을 달아서 저장. 여러 개 쌓일 때 구분용.
 
 ## alias
 
