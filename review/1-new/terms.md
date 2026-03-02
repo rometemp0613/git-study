@@ -103,3 +103,11 @@
 - **feature/***: develop에서 분기 → develop으로 머지. 새 기능 개발용.
 - **release/***: develop에서 분기 → main + develop 둘 다에 머지. 출시 마무리용.
 - **hotfix/***: main에서 분기 → main + develop 둘 다에 머지. 긴급 버그 수정용.
+
+## GitHub Flow
+
+- **GitHub Flow**: main + feature 브랜치만 쓰는 간소화된 전략. GitHub 자체가 사용하는 방식.
+- **장기 브랜치는 main 1개뿐**: develop, release, hotfix 브랜치 없음. feature는 만들고 머지하면 삭제.
+- **6가지 규칙**: main 항상 배포 가능, main에서 바로 브랜치, 설명적 이름, 수시 push, PR 리뷰 후 머지, 머지 즉시 배포.
+- **핫픽스 처리**: 별도 규칙 없이 feature 브랜치와 동일하게 처리. 빨리 리뷰하고 머지하면 그게 핫픽스.
+- **적합한 환경**: 웹앱, SaaS, 수시 배포, 소규모 팀. 릴리스 주기가 있는 앱은 Git Flow가 적합.
