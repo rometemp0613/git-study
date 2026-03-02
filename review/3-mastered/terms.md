@@ -103,3 +103,15 @@
 ## Issue & Project (추가)
 
 - **closes/fixes/resolves #번호**: PR 본문이나 커밋에 쓰면 머지 시 해당 이슈 자동 Close.
+
+## stash (추가2)
+
+- **git stash apply**: stash를 꺼내되 목록에 유지. 여러 브랜치에 같은 stash 적용할 때 사용.
+
+## Fork (추가2)
+
+- **Fork vs Clone**: Fork는 서버 간 복사(GitHub→GitHub), Clone은 서버→로컬 복사(GitHub→내 PC).
+
+## Git Flow (추가)
+
+- **--no-ff**: No Fast-Forward. 머지 커밋을 강제 생성해서 브랜치 분기/합류 히스토리를 보존.
