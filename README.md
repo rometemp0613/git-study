@@ -94,7 +94,7 @@
   - 핵심: main, develop, feature, release, hotfix 브랜치
 - [x] **GitHub Flow**
   - 핵심: 간소화된 전략, main + feature 브랜치
-- [ ] **Conventional Commits**
+- [x] **Conventional Commits**
   - 핵심: feat, fix, docs, style, refactor, test, chore
 
 ### 6단계: CI/CD 자동화
@@ -144,14 +144,15 @@
 | 2026-02-28 | 4단계 고급 | Git Alias, 단축키 등록/확인/삭제, ~/.gitconfig | 4단계 완료! |
 | 2026-03-01 | 5단계 협업 | Git Flow, 5가지 브랜치 전략, --no-ff | |
 | 2026-03-02 | 5단계 협업 | GitHub Flow, 6가지 규칙, Git Flow vs GitHub Flow | |
+| 2026-03-03 | 5단계 협업 | Conventional Commits, 7가지 타입, Breaking Change | 5단계 완료! |
 
 ---
 
 ## 진행 현황
 
 - **총 항목**: 34개
-- **완료**: 28개
-- **진행률**: 82%
+- **완료**: 29개
+- **진행률**: 85%
 
 ---
 

@@ -40,6 +40,7 @@
 
 - **git stash list**: 저장된 stash 목록 보기. stash@{0}이 가장 최근.
 - **git stash clear**: 모든 stash 삭제.
+- **git stash -m "메시지"**: 설명을 달아서 저장. 여러 개 쌓일 때 구분용.
 
 ## tag
 
@@ -111,3 +112,15 @@
 - **6가지 규칙**: main 항상 배포 가능, main에서 바로 브랜치, 설명적 이름, 수시 push, PR 리뷰 후 머지, 머지 즉시 배포.
 - **핫픽스 처리**: 별도 규칙 없이 feature 브랜치와 동일하게 처리. 빨리 리뷰하고 머지하면 그게 핫픽스.
 - **적합한 환경**: 웹앱, SaaS, 수시 배포, 소규모 팀. 릴리스 주기가 있는 앱은 Git Flow가 적합.
+
+## Conventional Commits
+
+- **Conventional Commits**: 커밋 메시지 표준화 규칙. `<type>[scope]: <description>` 형식.
+- **7가지 타입**: feat(새 기능), fix(버그 수정), docs(문서), style(포매팅), refactor(구조 개선), test(테스트), chore(잡일).
+- **scope**: 선택사항. 괄호 안에 기능 영역을 소문자로. `feat(auth): 로그인 추가`.
+- **description 규칙**: 콜론+공백 후 시작, 명령형, 소문자, 마침표 없음, 50자 이내.
+- **body**: 빈 줄 후 작성. "왜" 이 변경을 했는지 설명.
+- **footer**: `Closes #123` 등 이슈 참조, 리뷰어 정보.
+- **Breaking Change 표기**: 타입 뒤에 `!` 붙이기 또는 footer에 `BREAKING CHANGE:` 명시.
+- **시맨틱 버전 연결**: fix→PATCH, feat→MINOR, BREAKING CHANGE→MAJOR.
+- **콜론 앞 공백 금지**: `docs : 수정` ❌ → `docs: 수정` ✅. 자동화 도구가 파싱 실패함.

@@ -115,3 +115,19 @@
 ## Git Flow (추가)
 
 - **--no-ff**: No Fast-Forward. 머지 커밋을 강제 생성해서 브랜치 분기/합류 히스토리를 보존.
+
+## stash (추가3)
+
+- **git stash -m "메시지"**: 설명을 달아서 저장. 여러 개 쌓일 때 구분용.
+
+## Git Flow (추가2)
+
+- **hotfix/***: main에서 분기 → main + develop 둘 다에 머지. 긴급 버그 수정용.
+
+## GitHub Flow (추가)
+
+- **장기 브랜치는 main 1개뿐**: develop, release, hotfix 브랜치 없음.
+
+## 원격 추적 브랜치 (추가2)
+
+- **upstream (-u)**: `git push -u origin main`으로 설정. 이후 `git push`만으로 push 가능.
