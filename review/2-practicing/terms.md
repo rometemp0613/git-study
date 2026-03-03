@@ -12,7 +12,6 @@
 ## 원격 추적 브랜치
 
 - **git branch -a**: 로컬 + 원격 추적 브랜치 모두 보기.
-- **upstream (-u)**: `git push -u origin main`으로 설정. 이후 `git push`만으로 push 가능.
 - **push도 origin/main을 업데이트함**: push 성공 후 로컬의 origin/main도 push한 커밋 위치로 이동.
 
 ## PR CLI
@@ -49,8 +48,6 @@
 - **chmod +x**: Hook 파일에 실행 권한 부여. 없으면 Hook 실행 안 됨.
 
 ## stash
-
-- **git stash -m "메시지"**: 설명을 달아서 저장. 여러 개 쌓일 때 구분용.
 
 ## alias
 
