@@ -89,7 +89,7 @@
 
 ### 6단계: CI/CD 자동화
 
-- [ ] **GitHub Actions 기초**
+- [x] **GitHub Actions 기초**
   - 핵심: 워크플로우 YAML, on/jobs/steps
 - [ ] **자동 테스트**
   - 핵심: PR마다 테스트 실행, status check
@@ -135,14 +135,15 @@
 | 2026-03-01 | 5단계 협업 | Git Flow, 5가지 브랜치 전략, --no-ff | |
 | 2026-03-02 | 5단계 협업 | GitHub Flow, 6가지 규칙, Git Flow vs GitHub Flow | |
 | 2026-03-03 | 5단계 협업 | Conventional Commits, 7가지 타입, Breaking Change | 5단계 완료! |
+| 2026-03-04 | 6단계 CI/CD | GitHub Actions 기초, 워크플로우 YAML, on/jobs/steps | |
 
 ---
 
 ## 진행 현황
 
 - **총 항목**: 37개
-- **완료**: 30개
-- **진행률**: 81.1%
+- **완료**: 31개
+- **진행률**: 83.8%
 
 ---
 

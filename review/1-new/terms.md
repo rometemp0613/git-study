@@ -122,5 +122,17 @@
 - **body**: 빈 줄 후 작성. "왜" 이 변경을 했는지 설명.
 - **footer**: `Closes #123` 등 이슈 참조, 리뷰어 정보.
 - **Breaking Change 표기**: 타입 뒤에 `!` 붙이기 또는 footer에 `BREAKING CHANGE:` 명시.
-- **시맨틱 버전 연결**: fix→PATCH, feat→MINOR, BREAKING CHANGE→MAJOR.
 - **콜론 앞 공백 금지**: `docs : 수정` ❌ → `docs: 수정` ✅. 자동화 도구가 파싱 실패함.
+
+## GitHub Actions
+
+- **Workflow**: 자동화 전체 프로세스. `.github/workflows/` 안의 `.yml` 파일 1개 = 워크플로우 1개.
+- **Event (on)**: 워크플로우를 실행시키는 트리거. push, pull_request, workflow_dispatch 등.
+- **Job**: 독립된 작업 단위. 기본적으로 병렬 실행. 순서 강제는 `needs:` 사용.
+- **Step**: Job 안에서 순서대로 실행되는 각 단계.
+- **Runner (runs-on)**: 워크플로우가 실행되는 가상 서버. ubuntu-latest, windows-latest, macos-latest.
+- **uses**: 마켓플레이스의 Action 가져다 쓰기. `uses: actions/checkout@v4`.
+- **run**: 셸 명령어 직접 실행. `run: echo "hello"`. 여러 줄은 `run: |` 사용.
+- **actions/checkout@v4**: 저장소 코드를 Runner에 복사(clone)하는 필수 Action. 없으면 파일 관련 작업 불가.
+- **workflow_dispatch**: 수동 실행 트리거. Actions 탭에서 "Run workflow" 버튼 생성.
+- **git branch -D**: 강제 브랜치 삭제. squash merge 후에는 `-d` 대신 `-D` 필요.

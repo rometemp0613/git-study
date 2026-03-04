@@ -16,7 +16,6 @@
 
 ## PR CLI
 
-- **gh pr create --title "제목" --body "설명"**: CLI에서 PR 생성.
 - **gh pr view <번호>**: PR 정보 조회.
 - **gh pr merge <번호>**: PR 머지.
 
@@ -52,3 +51,7 @@
 ## alias
 
 - **! 접두사**: 셸 명령어를 alias로 만들 때 사용. `'!gitk'`처럼 앞에 붙임.
+
+## Conventional Commits
+
+- **시맨틱 버전 연결**: fix→PATCH, feat→MINOR, BREAKING CHANGE→MAJOR.
