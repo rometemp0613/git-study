@@ -3,6 +3,8 @@ name: Hello CI
 on:
   pull_request:
     branches: [main]
+  
+  workflow_dispatch:
 
 jobs:
   greeting:
@@ -23,3 +25,8 @@ jobs:
           echo "=== README.md 내용 ==="
           head -5 README.md
 
+      - name: 메타데이터 출력
+        run: |
+          uname -a
+          date
+          git --version
