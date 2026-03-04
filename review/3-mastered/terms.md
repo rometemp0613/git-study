@@ -131,3 +131,7 @@
 ## 원격 추적 브랜치 (추가2)
 
 - **upstream (-u)**: `git push -u origin main`으로 설정. 이후 `git push`만으로 push 가능.
+
+## PR CLI (추가)
+
+- **gh pr create --title "제목" --body "설명"**: CLI에서 PR 생성.
