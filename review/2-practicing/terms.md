@@ -44,8 +44,6 @@
 
 ## hooks
 
-- **chmod +x**: Hook 파일에 실행 권한 부여. 없으면 Hook 실행 안 됨.
-
 ## stash
 
 ## alias
@@ -54,4 +52,6 @@
 
 ## Conventional Commits
 
-- **시맨틱 버전 연결**: fix→PATCH, feat→MINOR, BREAKING CHANGE→MAJOR.
+## submodule
+
+- **submodule 삭제 3단계**: `deinit` → `rm -rf .git/modules/...` → `git rm`. 번거롭지만 이 순서대로.

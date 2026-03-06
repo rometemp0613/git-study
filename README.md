@@ -91,7 +91,7 @@
 
 - [x] **GitHub Actions 기초**
   - 핵심: 워크플로우 YAML, on/jobs/steps
-- [ ] **자동 테스트**
+- [x] **자동 테스트**
   - 핵심: PR마다 테스트 실행, status check
 - [ ] **자동 배포**
   - 핵심: main 머지 시 배포, secrets 관리
@@ -136,14 +136,15 @@
 | 2026-03-02 | 5단계 협업 | GitHub Flow, 6가지 규칙, Git Flow vs GitHub Flow | |
 | 2026-03-03 | 5단계 협업 | Conventional Commits, 7가지 타입, Breaking Change | 5단계 완료! |
 | 2026-03-04 | 6단계 CI/CD | GitHub Actions 기초, 워크플로우 YAML, on/jobs/steps | |
+| 2026-03-07 | 6단계 CI/CD | 자동 테스트, on: pull_request, Status Check, Required Check | |
 
 ---
 
 ## 진행 현황
 
 - **총 항목**: 37개
-- **완료**: 31개
-- **진행률**: 83.8%
+- **완료**: 32개
+- **진행률**: 86.5%
 
 ---
 
