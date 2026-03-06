@@ -135,3 +135,15 @@
 ## PR CLI (추가)
 
 - **gh pr create --title "제목" --body "설명"**: CLI에서 PR 생성.
+
+## git branch -D (추가)
+
+- **git branch -D**: 강제 브랜치 삭제. `-d`는 커밋 해시로 HEAD에 포함 여부를 판단하므로, squash merge 등으로 해시가 달라지면 거부됨. 이때 `-D`로 강제 삭제.
+
+## chmod +x (추가)
+
+- **chmod +x .git/hooks/<hook이름>**: Hook 파일에 실행 권한 부여. 없으면 Hook 실행 안 됨.
+
+## 시맨틱 버전 연결 (추가)
+
+- **시맨틱 버전 연결**: fix→PATCH, feat→MINOR, BREAKING CHANGE→MAJOR.

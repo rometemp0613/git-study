@@ -83,7 +83,6 @@
 - **git submodule init + update**: clone 후 빈 submodule 초기화. init은 등록, update는 파일 다운로드.
 - **git submodule update --remote**: 원격 최신 커밋으로 업데이트. (그냥 update는 메인이 기록한 커밋으로 맞추는 것)
 - **git submodule status**: 상태 확인. 앞 기호: 공백=정상, `-`=init 안 됨, `+`=커밋이 다름.
-- **submodule 삭제 3단계**: `deinit` → `rm -rf .git/modules/...` → `git rm`. 번거롭지만 이 순서대로.
 - **submodule 업데이트 2단계**: submodule 안에서 pull(파일 가져옴) → 메인에서 커밋(포인터 기록). 둘 다 해야 완성.
 - **submodule 폴더는 독립된 Git 저장소**: clone으로 만들어졌으므로 자기만의 remote, log, branch가 별도로 존재.
 
@@ -135,4 +134,11 @@
 - **run**: 셸 명령어 직접 실행. `run: echo "hello"`. 여러 줄은 `run: |` 사용.
 - **actions/checkout@v4**: 저장소 코드를 Runner에 복사(clone)하는 필수 Action. 없으면 파일 관련 작업 불가.
 - **workflow_dispatch**: 수동 실행 트리거. Actions 탭에서 "Run workflow" 버튼 생성.
-- **git branch -D**: 강제 브랜치 삭제. squash merge 후에는 `-d` 대신 `-D` 필요.
+
+## 자동 테스트
+
+- **on: pull_request**: PR 이벤트에 반응하는 트리거. PR 생성/커밋 추가 시 워크플로우 실행.
+- **Status Check**: 워크플로우 실행 결과가 PR 페이지에 표시되는 것. Job 이름이 Check 이름이 됨.
+- **Required Status Check**: Ruleset에서 "Require status checks to pass" 설정. 테스트 실패 시 머지 차단.
+- **npm ci**: `npm install`보다 빠르고 정확한 의존성 설치. CI 환경에서 사용.
+- **actions/setup-node@v4**: Node.js 환경을 Runner에 설치하는 Action. `with: node-version`으로 버전 지정.
