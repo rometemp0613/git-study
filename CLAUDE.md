@@ -5,6 +5,11 @@
 이 저장소는 Git & GitHub를 학습하는 프로젝트입니다.
 - 사용자는 책 없이 Claude에게만 의지해서 학습 중
 
+## 영어 학습 연계
+
+- 학습 중 영어 원문이나 영어 표현을 함께 다루게 되면, 모르는 단어와 표현은 `../english-learning/notes/1-new/expressions.md`에 추가한다.
+- 표현 기록 형식과 관리 규칙은 `../english-learning/CLAUDE.md`를 따른다.
+
 ## 대화 시작 시 해야 할 일
 
 0. **상위 폴더(study/)의 CLAUDE.md를 먼저 읽고, 변경된 내용이 있는지 확인할 것**
