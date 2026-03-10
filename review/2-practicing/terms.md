@@ -2,9 +2,6 @@
 
 ## restore
 
-- **git restore --source <커밋> <파일>**: 특정 커밋 시점의 파일 상태로 되돌림. 기본값은 HEAD.
-- **git restore .**: 현재 디렉토리의 모든 변경 파일을 한 번에 되돌림.
-
 ## cherry-pick
 
 - **git cherry-pick --abort**: cherry-pick 취소하고 원래 상태로 돌아감.
@@ -24,7 +21,6 @@
 - **git clone <URL>**: 원격 저장소를 로컬에 통째로 복제. 자동으로 origin 설정됨.
 - **git remote -v**: 연결된 원격 저장소 목록과 URL 확인.
 - **git push origin main**: 로컬 커밋을 원격에 업로드. origin/main도 함께 업데이트됨.
-- **git pull**: fetch + merge. 원격 변경사항을 가져와서 바로 병합.
 
 ## Pull Request 워크플로우
 
@@ -39,8 +35,6 @@
 
 ## README & Markdown
 
-- **마크다운 이미지 vs 링크**: `[텍스트](URL)` = 링크, `![대체텍스트](URL)` = 이미지. `!` 유무 차이.
-
 
 ## hooks
 
@@ -48,10 +42,6 @@
 
 ## alias
 
-- **! 접두사**: 셸 명령어를 alias로 만들 때 사용. `'!gitk'`처럼 앞에 붙임.
-
 ## Conventional Commits
 
 ## submodule
-
-- **submodule 삭제 3단계**: `deinit` → `rm -rf .git/modules/...` → `git rm`. 번거롭지만 이 순서대로.

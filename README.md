@@ -93,7 +93,7 @@
   - 핵심: 워크플로우 YAML, on/jobs/steps
 - [x] **자동 테스트**
   - 핵심: PR마다 테스트 실행, status check
-- [ ] **자동 배포**
+- [x] **자동 배포**
   - 핵심: main 머지 시 배포, secrets 관리
 - [ ] **린트/포매팅**
   - 핵심: 코드 품질 자동 검사, prettier, eslint
@@ -137,14 +137,15 @@
 | 2026-03-03 | 5단계 협업 | Conventional Commits, 7가지 타입, Breaking Change | 5단계 완료! |
 | 2026-03-04 | 6단계 CI/CD | GitHub Actions 기초, 워크플로우 YAML, on/jobs/steps | |
 | 2026-03-07 | 6단계 CI/CD | 자동 테스트, on: pull_request, Status Check, Required Check | |
+| 2026-03-10 | 6단계 CI/CD | 자동 배포, GitHub Pages, Secrets, Environment, CI vs CD | |
 
 ---
 
 ## 진행 현황
 
 - **총 항목**: 37개
-- **완료**: 32개
-- **진행률**: 86.5%
+- **완료**: 33개
+- **진행률**: 89.2%
 
 ---
 

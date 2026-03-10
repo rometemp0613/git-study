@@ -142,3 +142,15 @@
 - **Required Status Check**: Ruleset에서 "Require status checks to pass" 설정. 테스트 실패 시 머지 차단.
 - **npm ci**: `npm install`보다 빠르고 정확한 의존성 설치. CI 환경에서 사용.
 - **actions/setup-node@v4**: Node.js 환경을 Runner에 설치하는 Action. `with: node-version`으로 버전 지정.
+
+## 자동 배포
+
+- **배포 트리거**: `on: push, branches: [main]`. PR 머지 시 main에 push가 발생하므로 자동 배포됨.
+- **Secrets**: GitHub에서 민감한 정보를 암호화 저장. 한번 저장하면 다시 볼 수 없음. 로그에 `***`로 마스킹.
+- **${{ secrets.NAME }}**: 워크플로우에서 Secrets 값을 참조하는 문법.
+- **${{ vars.NAME }}**: Variables 값을 참조하는 문법. Secrets와 달리 평문이고 다시 볼 수 있음.
+- **Environment**: 배포 대상 구분 (staging, production). 환경별 secrets, 보호 규칙, 배포 이력 제공.
+- **permissions**: 워크플로우에 필요한 권한 명시. `pages: write`, `id-token: write` 등.
+- **CI vs CD**: CI(Continuous Integration)=PR마다 테스트, CD(Continuous Deployment)=main 머지 시 자동 배포.
+- **actions/upload-pages-artifact@v3**: 배포할 파일을 artifact로 업로드하는 Action.
+- **actions/deploy-pages@v4**: GitHub Pages에 실제 배포하는 Action.
