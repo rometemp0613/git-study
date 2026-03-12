@@ -120,14 +120,12 @@
 - **description 규칙**: 콜론+공백 후 시작, 명령형, 소문자, 마침표 없음, 50자 이내.
 - **body**: 빈 줄 후 작성. "왜" 이 변경을 했는지 설명.
 - **footer**: `Closes #123` 등 이슈 참조, 리뷰어 정보.
-- **Breaking Change 표기**: 타입 뒤에 `!` 붙이기 또는 footer에 `BREAKING CHANGE:` 명시.
 - **콜론 앞 공백 금지**: `docs : 수정` ❌ → `docs: 수정` ✅. 자동화 도구가 파싱 실패함.
 
 ## GitHub Actions
 
 - **Workflow**: 자동화 전체 프로세스. `.github/workflows/` 안의 `.yml` 파일 1개 = 워크플로우 1개.
 - **Event (on)**: 워크플로우를 실행시키는 트리거. push, pull_request, workflow_dispatch 등.
-- **Job**: 독립된 작업 단위. 기본적으로 병렬 실행. 순서 강제는 `needs:` 사용.
 - **Step**: Job 안에서 순서대로 실행되는 각 단계.
 - **Runner (runs-on)**: 워크플로우가 실행되는 가상 서버. ubuntu-latest, windows-latest, macos-latest.
 - **uses**: 마켓플레이스의 Action 가져다 쓰기. `uses: actions/checkout@v4`.
@@ -154,3 +152,16 @@
 - **CI vs CD**: CI(Continuous Integration)=PR마다 테스트, CD(Continuous Deployment)=main 머지 시 자동 배포.
 - **actions/upload-pages-artifact@v3**: 배포할 파일을 artifact로 업로드하는 Action.
 - **actions/deploy-pages@v4**: GitHub Pages에 실제 배포하는 Action.
+
+## 린트/포매팅
+
+- **Lint (린트)**: 코드 품질 검사. 버그, 안 쓰는 변수, == 대신 === 등. 대표 도구: ESLint.
+- **Formatting (포매팅)**: 코드 모양 통일. 들여쓰기, 따옴표, 세미콜론 등. 대표 도구: Prettier.
+- **ESLint**: JS/TS 린터. `eslint.config.js`로 규칙 설정. `npx eslint src/`로 실행.
+- **Prettier**: 코드 포매터. `.prettierrc`로 스타일 설정. `--check`(검사만), `--write`(수정).
+- **eslint-config-prettier**: ESLint와 Prettier 충돌 방지. Prettier와 겹치는 ESLint 규칙 비활성화.
+- **globals**: ESLint에 실행 환경 알려주는 패키지. `globals.node`(Node.js), `globals.browser`(브라우저).
+- **languageOptions.globals**: eslint.config.js에서 전역 변수(console, process 등) 허용 설정.
+- **규칙 레벨**: `"off"`(무시), `"warn"`(경고, CI 통과), `"error"`(에러, CI 실패).
+- **npx eslint --fix**: 자동 수정 가능한 린트 문제를 고쳐줌.
+- **"type": "module"**: package.json에 추가. eslint.config.js에서 import 문법 쓰려면 필요.
