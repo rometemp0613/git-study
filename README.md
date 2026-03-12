@@ -95,7 +95,7 @@
   - 핵심: PR마다 테스트 실행, status check
 - [x] **자동 배포**
   - 핵심: main 머지 시 배포, secrets 관리
-- [ ] **린트/포매팅**
+- [x] **린트/포매팅**
   - 핵심: 코드 품질 자동 검사, prettier, eslint
 
 ### 7단계: Git 내부 구조 (심화)
@@ -138,14 +138,15 @@
 | 2026-03-04 | 6단계 CI/CD | GitHub Actions 기초, 워크플로우 YAML, on/jobs/steps | |
 | 2026-03-07 | 6단계 CI/CD | 자동 테스트, on: pull_request, Status Check, Required Check | |
 | 2026-03-10 | 6단계 CI/CD | 자동 배포, GitHub Pages, Secrets, Environment, CI vs CD | |
+| 2026-03-13 | 6단계 CI/CD | 린트/포매팅, ESLint, Prettier, GitHub Actions 자동 검사 | 6단계 완료! |
 
 ---
 
 ## 진행 현황
 
 - **총 항목**: 37개
-- **완료**: 33개
-- **진행률**: 89.2%
+- **완료**: 34개
+- **진행률**: 91.9%
 
 ---
 

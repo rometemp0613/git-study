@@ -42,6 +42,12 @@
 
 ## alias
 
+## GitHub Actions
+
+- **Job**: 독립된 작업 단위. 기본적으로 병렬 실행. 순서 강제는 `needs:` 사용.
+
 ## Conventional Commits
+
+- **Breaking Change 표기**: 타입 뒤에 `!` 붙이기 또는 footer에 `BREAKING CHANGE:` 명시.
 
 ## submodule
