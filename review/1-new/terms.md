@@ -165,3 +165,13 @@
 - **규칙 레벨**: `"off"`(무시), `"warn"`(경고, CI 통과), `"error"`(에러, CI 실패).
 - **npx eslint --fix**: 자동 수정 가능한 린트 문제를 고쳐줌.
 - **"type": "module"**: package.json에 추가. eslint.config.js에서 import 문법 쓰려면 필요.
+
+## Git 객체
+
+- **blob (Binary Large Object)**: 파일의 내용만 저장하는 객체. 파일 이름은 모른다. 같은 내용이면 같은 해시 → 1개만 저장.
+- **tree**: 디렉토리 구조를 저장하는 객체. "파일 이름 → blob/tree 해시" 매핑을 기록. 하위 폴더는 tree 안의 tree.
+- **commit 객체 구성**: tree(스냅샷) + parent(이전 커밋) + author/committer + message. 4가지 정보를 담고 있음.
+- **git cat-file -p <해시>**: 객체의 내용을 pretty print. HEAD, 해시값 등 사용 가능. 경로(파일/폴더명)는 불가.
+- **git cat-file -t <해시>**: 객체의 타입 확인. commit, tree, blob 중 하나 출력.
+- **100644 / 040000 / 100755**: tree에서 쓰는 파일 모드. 각각 일반 파일, 디렉토리, 실행 파일.
+- **같은 내용 = 같은 blob**: 파일 이름을 바꿔도 내용이 같으면 blob은 재사용. tree만 변경됨.

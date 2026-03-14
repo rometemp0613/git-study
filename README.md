@@ -100,7 +100,7 @@
 
 ### 7단계: Git 내부 구조 (심화)
 
-- [ ] **Git 객체**
+- [x] **Git 객체**
   - 핵심: blob, tree, commit 객체의 관계
 - [ ] **해시 함수**
   - 핵심: SHA-1, 커밋 ID의 원리
@@ -139,14 +139,15 @@
 | 2026-03-07 | 6단계 CI/CD | 자동 테스트, on: pull_request, Status Check, Required Check | |
 | 2026-03-10 | 6단계 CI/CD | 자동 배포, GitHub Pages, Secrets, Environment, CI vs CD | |
 | 2026-03-13 | 6단계 CI/CD | 린트/포매팅, ESLint, Prettier, GitHub Actions 자동 검사 | 6단계 완료! |
+| 2026-03-14 | 7단계 내부구조 | Git 객체 (blob, tree, commit), cat-file, 키-값 저장소 | |
 
 ---
 
 ## 진행 현황
 
 - **총 항목**: 37개
-- **완료**: 34개
-- **진행률**: 91.9%
+- **완료**: 35개
+- **진행률**: 94.6%
 
 ---
 
