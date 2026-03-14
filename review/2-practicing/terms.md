@@ -50,4 +50,8 @@
 
 - **Breaking Change 표기**: 타입 뒤에 `!` 붙이기 또는 footer에 `BREAKING CHANGE:` 명시.
 
+## 린트/포매팅
+
+- **eslint-config-prettier**: ESLint와 Prettier 충돌 방지. Prettier와 겹치는 ESLint 규칙 비활성화.
+
 ## submodule
