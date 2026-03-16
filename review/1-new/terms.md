@@ -183,3 +183,16 @@
 - **눈사태 효과**: 입력이 1글자만 달라도 해시값이 완전히 달라지는 특성.
 - **SHA-256**: SHA-1 후속. 256비트(64자리). `git init --object-format=sha256`으로 실험적 지원.
 - **규칙 레벨 (ESLint)**: `"off"`(무시), `"warn"`(경고, CI 통과), `"error"`(에러, CI 실패).
+
+## .git 폴더
+
+- **HEAD 파일**: `.git/HEAD`. 현재 체크아웃된 브랜치를 가리킴. `ref: refs/heads/main` 형태. Detached HEAD면 해시값 직접 저장.
+- **refs/heads/**: 로컬 브랜치 저장 폴더. 브랜치 1개 = 커밋 해시가 적힌 파일 1개.
+- **refs/tags/**: 태그 저장 폴더. 구조는 브랜치와 동일.
+- **refs/remotes/origin/**: 원격 추적 브랜치 저장 폴더. fetch/push 시 업데이트.
+- **objects/ 폴더 구조**: 해시 앞 2자리 = 폴더명, 나머지 38자리 = 파일명. 256개 폴더에 분산해서 파일시스템 성능 유지.
+- **pack 파일**: 객체가 많아지면 loose object를 하나의 packfile로 압축. `.git/objects/pack/`에 저장.
+- **index**: `.git/index`. Staging Area의 실체. 바이너리 파일. `git ls-files --stage`로 확인.
+- **.git/config**: 로컬 설정 파일. remote URL, branch 추적 정보 등 저장.
+- **packed-refs**: refs를 하나의 파일로 합쳐 최적화. refs/ 파일이 있으면 그쪽이 우선.
+- **fetch 매핑 규칙**: `+refs/heads/*:refs/remotes/origin/*`. 원격 브랜치를 로컬 원격 추적 브랜치로 복사하는 규칙.
