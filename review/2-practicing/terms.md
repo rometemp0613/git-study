@@ -8,13 +8,11 @@
 
 ## 원격 추적 브랜치
 
-- **git branch -a**: 로컬 + 원격 추적 브랜치 모두 보기.
 - **push도 origin/main을 업데이트함**: push 성공 후 로컬의 origin/main도 push한 커밋 위치로 이동.
 
 ## PR CLI
 
 - **gh pr view <번호>**: PR 정보 조회.
-- **gh pr merge <번호>**: PR 머지.
 
 ## remote 기타
 
@@ -44,8 +42,6 @@
 
 ## GitHub Actions
 
-- **Job**: 독립된 작업 단위. 기본적으로 병렬 실행. 순서 강제는 `needs:` 사용.
-
 ## Conventional Commits
 
 - **Breaking Change 표기**: 타입 뒤에 `!` 붙이기 또는 footer에 `BREAKING CHANGE:` 명시.
@@ -55,3 +51,9 @@
 - **eslint-config-prettier**: ESLint와 Prettier 충돌 방지. Prettier와 겹치는 ESLint 규칙 비활성화.
 
 ## submodule
+
+## Git 객체
+
+- **blob (Binary Large Object)**: 파일의 내용만 저장하는 객체. 파일 이름은 모른다. 같은 내용이면 같은 해시 → 1개만 저장.
+- **tree**: 디렉토리 구조를 저장하는 객체. "파일 이름 → blob/tree 해시" 매핑을 기록. 하위 폴더는 tree 안의 tree.
+- **git cat-file -t <해시>**: 객체의 타입 확인. commit, tree, blob 중 하나 출력.
