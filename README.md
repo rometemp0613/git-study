@@ -107,6 +107,46 @@
 - [x] **.git 폴더 탐험**
   - 핵심: refs, objects, HEAD 파일 구조
 
+### 기본 과정 완주! (37/37)
+
+---
+
+### 8단계: 실무 필수 도구
+
+- [ ] **git bisect**
+  - 핵심: 버그 원인 커밋을 이진탐색으로 찾기
+- [ ] **git blame**
+  - 핵심: 누가, 언제, 왜 이 줄을 바꿨는지 추적
+- [ ] **git log 심화**
+  - 핵심: --graph, --oneline, 필터링, 파일별 히스토리
+
+### 9단계: 대규모 프로젝트
+
+- [ ] **Git LFS**
+  - 핵심: 대용량 파일(이미지, 모델, 바이너리) 관리
+- [ ] **Shallow clone & Sparse checkout**
+  - 핵심: --depth로 히스토리 제한, 필요한 폴더만 체크아웃
+- [ ] **Signed commits (GPG)**
+  - 핵심: 커밋 서명, 신뢰성 검증, 보안 중시 회사 요구사항
+- [ ] **.gitattributes**
+  - 핵심: 파일별 diff/merge 전략, line ending 설정
+
+### 10단계: 고급 기법
+
+- [ ] **git worktree**
+  - 핵심: 하나의 repo에서 여러 브랜치 동시 작업
+- [ ] **merge 전략**
+  - 핵심: ours, theirs, recursive, octopus
+- [ ] **git rerere**
+  - 핵심: 반복되는 충돌 자동 해결 (Reuse Recorded Resolution)
+- [ ] **git filter-repo**
+  - 핵심: 히스토리 재작성, 민감정보 제거, 대형 파일 정리
+
+### 11단계: Git 너머
+
+- [ ] **GitLab / Bitbucket / Gerrit**
+  - 핵심: GitHub 외 플랫폼 비교, Gerrit 코드 리뷰, 회사별 선택 기준
+
 ---
 
 ## 학습 일지
@@ -147,9 +187,15 @@
 
 ## 진행 현황
 
+### 기본 과정
 - **총 항목**: 37개
 - **완료**: 37개
 - **진행률**: 100%
+
+### 심화 과정
+- **총 항목**: 12개
+- **완료**: 0개
+- **진행률**: 0%
 
 ---
 
